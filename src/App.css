@@ -35,7 +35,6 @@
 
 .ticTacToeBoard  {
   width:50%;
-  
   display: grid;
   justify-items: center;
   margin:auto;
@@ -50,8 +49,6 @@ forced to a square size.... */
   width:100%;
   padding-top:10%;  /* forces square shape */
   padding-bottom:10%;
-  font-size:15vw;
+  font-size:10vw;
   border:2px red solid;
-
-
 }
