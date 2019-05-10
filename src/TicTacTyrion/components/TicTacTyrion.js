@@ -11,7 +11,7 @@ export default class TicTacTyrion extends Component {
         this.state = {
             playerOneName: 'Player One', // player one is always 'X'
             playerTwoName: 'Player Two', // player two is always 'O'
-            isPlayerOneTurn: false,
+            isPlayerOneTurn: true,
             // Letters for columns, numbers for rows
             // There will be eight arrays containing the board values ('X', 'O' or null) that will be checked after each turn. 
             board: {

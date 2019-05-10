@@ -16,7 +16,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             // }}>{board.A1}</div>    
             }}>
-            <img src={board.A1 ? ( board.A1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.A1 === 'O' ? "flipped" : ""}
+            src={board.A1 ? ( board.A1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
 
             <div className='ticTacToeSquare' onClick={()  => {
@@ -25,7 +27,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 clickHandler('B1')
                 }
             }}>
-            <img src={board.B1 ? ( board.B1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.B1 === 'O' ? "flipped" : ""}
+            src={board.B1 ? ( board.B1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
 
             <div className='ticTacToeSquare' onClick={()  => {
@@ -35,7 +39,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.C1} */}
-            <img src={board.C1 ? ( board.C1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.C1 === 'O' ? "flipped" : ""}
+            src={board.C1 ? ( board.C1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
 
             <div className='ticTacToeSquare' onClick={()  => {
@@ -44,7 +50,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.A2} */}
-            <img src={board.A2 ? ( board.A2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.A2 === 'O' ? "flipped" : ""}
+            src={board.A2 ? ( board.A2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
 
             <div className='ticTacToeSquare' onClick={()  => {
@@ -54,7 +62,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.B2} */}
-            <img src={board.B2 ? ( board.B2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.B2 === 'O' ? "flipped" : ""}
+            src={board.B2 ? ( board.B2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
             <div className='ticTacToeSquare' onClick={()  => {
                 if (board.C2 === null) {
@@ -63,7 +73,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.C2} */}
-            <img src={board.C2 ? ( board.C2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.C2 === 'O' ? "flipped" : ""}
+            src={board.C2 ? ( board.C2 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
             <div className='ticTacToeSquare' onClick={()  => {
                 if (board.A3 === null) {
@@ -72,7 +84,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.A3} */}
-            <img src={board.A3 ? ( board.A3 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.A3 === 'O' ? "flipped" : ""}
+            src={board.A3 ? ( board.A3 === 'X' ? player1png : player2png) : blank} alt="sprite" />
 
             </div>
             <div className='ticTacToeSquare' onClick={()  => { 
@@ -82,7 +96,11 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.B3} */}
-            <img src={board.B3 ? ( board.B3 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.B3 === 'O' ? "flipped" : ""}
+            src={board.B3 ? ( board.B3 === 'X' ? player1png : player2png) : blank} 
+            
+            alt="sprite" />
 
             </div>
             <div className='ticTacToeSquare' onClick={()  => {
@@ -92,7 +110,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 }
             }}>
             {/* {board.C3} */}
-            <img src={board.C3 ? ( board.C3 === 'X' ? player1png : player2png) : blank} alt="sprite" />
+            <img 
+            className={board.C3 === 'O' ? "flipped" : ""}
+            src={board.C3 ? ( board.C3 === 'X' ? player1png : player2png) : blank} alt="sprite" />
             </div>
         </div>
     )

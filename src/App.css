@@ -67,3 +67,7 @@ forced to a square size.... */
 .ticTacToeSquare img {
   width:100%;
 }
+
+.flipped {
+  transform: scaleX(-1);
+}
