@@ -34,7 +34,11 @@
 
 
 .ticTacToeBoard  {
+  width:50%;
+  
   display: grid;
+  justify-items: center;
+  margin:auto;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 33% 33% 33%;
 }
@@ -42,6 +46,12 @@
 /* we may change this so the size is flexible... which would mean the div for the board has to be 
 forced to a square size.... */
 .ticTacToeSquare {
-  height:200px;
-  width:200px;
+  /* height:30%; */
+  width:100%;
+  padding-top:10%;  /* forces square shape */
+  padding-bottom:10%;
+  font-size:15vw;
+  border:2px red solid;
+
+
 }
