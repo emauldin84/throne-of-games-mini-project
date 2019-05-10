@@ -18,6 +18,11 @@ const characters = [
     "Jorah Mormont",
     "Jaime Lannister",
     "Tyrion Lannister",
-    "Cersei Lannister"
+    "Cersei Lannister",
+    "White Walker",
+    "Gendry",
+    "Grey Worm",
+    "The Hound",
+    "Joffrey Baratheon",
 ];
 export default characters;
