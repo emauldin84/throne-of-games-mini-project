@@ -63,3 +63,7 @@ forced to a square size.... */
   font-size:10vw;
   border:2px red solid;
 }
+
+.ticTacToeSquare img {
+  width:100%;
+}
