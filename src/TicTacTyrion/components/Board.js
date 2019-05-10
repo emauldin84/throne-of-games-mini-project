@@ -5,7 +5,7 @@ export default function Board({board, clickHandler, checkWinner}) {
         <div className='ticTacToeBoard'>
             <div className='ticTacToeSquare' onClick={()  => {
                 clickHandler('A1')
-                checkWinner()
+                // checkWinner()
             }}>{board.A1}</div>
             <div className='ticTacToeSquare' onClick={()  => {
                 clickHandler('B1')
