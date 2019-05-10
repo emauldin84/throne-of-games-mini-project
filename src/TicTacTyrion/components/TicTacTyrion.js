@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Board from './Board'
 import Result from './Result';
-
+import characters from './characters.js'
+import PlayerOne from './PlayerOne'
+import PlayerTwo from './PlayerTwo'
 
 export default class TicTacTyrion extends Component {
     constructor(props) {
@@ -24,8 +26,7 @@ export default class TicTacTyrion extends Component {
                 'C3': null,
             },
             turnCounter: 0,
-            winner: null, // after turnCounter = 9 check array, then result in 'draw' if no arrays === true. Otherwise, 'player one' or 'player two'
-            
+            winner: null, // after turnCounter = 9 check array, then result in 'draw' if no arrays === true. Otherwise, 'player one' or 'player two' 
 
         }
     }
@@ -33,9 +34,9 @@ export default class TicTacTyrion extends Component {
         return (
         <div>
             <h1>TicTacTyrion</h1>
-            {/* <PlayerOne /> */}
+            <PlayerOne characters={characters} playerOne={this.state.playerOne} playerTwo={this.state.playerTwo} setPlayer={this._setPlayerOne}/>
             <Board board={this.state.board} clickHandler={this._setCell} />
-            {/* <PlayerTwo /> */}
+            <PlayerTwo characters={characters} playerOne={this.state.playerOne} playerTwo={this.state.playerTwo} setPlayer={this._setPlayerTwo}/>
             {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
             <Result winner={this.state.winner} clickHandler={this._newGame}/> 
         
@@ -43,12 +44,16 @@ export default class TicTacTyrion extends Component {
         )
     }
     
-        _setPlayerOneName = () => {
-            
+        _setPlayerOneName = (name) => {
+            this.setState ({
+                playerOneName: name,
+            })
         }
         
-        _setPlayerTwoName = () => {
-
+        _setPlayerTwoName = (name) => {
+            this.setState ({
+                playerTwoName: name,
+            })
         }
 
         _setCell = (cell) => {
