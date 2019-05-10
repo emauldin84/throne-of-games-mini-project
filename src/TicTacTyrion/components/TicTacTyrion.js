@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Board from './Board'
+import Result from './Result';
 
 
 export default class TicTacTyrion extends Component {
@@ -12,15 +13,15 @@ export default class TicTacTyrion extends Component {
             // Letters for columns, numbers for rows
             // There will be eight arrays containing the board values ('X', 'O' or null) that will be checked after each turn. 
             board: {
-                'A1': 'A1',
-                'A2': 'A2',
-                'A3': 'A3',
-                'B1': 'B1',
-                'B2': 'B2',
-                'B3': 'B3',
-                'C1': 'C1',
-                'C2': 'C2',
-                'C3': 'C3',
+                'A1': null,
+                'A2': null,
+                'A3': null,
+                'B1': null,
+                'B2': null,
+                'B3': null,
+                'C1': null,
+                'C2': null,
+                'C3': null,
             },
             turnCounter: 0,
             winner: null, // after turnCounter = 9 check array, then result in 'draw' if no arrays === true. Otherwise, 'player one' or 'player two'
@@ -36,7 +37,7 @@ export default class TicTacTyrion extends Component {
             <Board board={this.state.board} clickHandler={this._setCell} />
             {/* <PlayerTwo /> */}
             {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
-            {/* <Result />  */}
+            <Result winner={this.state.winner} clickHandler={this._newGame}/> 
         
         </div>
         )
@@ -78,15 +79,18 @@ export default class TicTacTyrion extends Component {
                     checkArrayForWin(Diag1) || checkArrayForWin(Diag2) ) {
                         //if true for any one array - there is a winner
                         if (this.state.isPlayerOneTurn) {
-                            winner = "Player 1"
+                            winner = this.state.playerOneName;
                         }
                         else {
-                            winner = "Player 2"
+                            winner = this.state.playerTwoName;
                         }
                         
                     }
 
-                    console.log("the winner is ", winner);
+                    if ((this.state.turnCounter === 8) && (winner === null)) {
+                        winner = "Lion Scratch";
+                    }
+
                     // else {
                     //     //no winner
                     //     counter +1 unloess at 9
@@ -108,9 +112,25 @@ export default class TicTacTyrion extends Component {
 
             }
         _newGame = () => {
-            // reset board
-            // reset counter
-            // keep player names?
+            //not changing player names
+            this.setState({
+                isPlayerOneTurn: false,
+                // Letters for columns, numbers for rows
+                // There will be eight arrays containing the board values ('X', 'O' or null) that will be checked after each turn. 
+                board: {
+                    'A1': null,
+                    'A2': null,
+                    'A3': null,
+                    'B1': null,
+                    'B2': null,
+                    'B3': null,
+                    'C1': null,
+                    'C2': null,
+                    'C3': null,
+                },
+                turnCounter: 0,
+                winner: null,  
+            })
         }
 
     
