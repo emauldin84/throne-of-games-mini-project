@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer}) {
-    const characterList = {characters}.filter(character => (
-        character !== {playerTwo}
+    const characterList = characters.filter(character => (
+        character !== playerTwo
     ))
     characterList.sort()
     return (
@@ -10,11 +10,13 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer}
             <select onChange={(e) => {
                 setPlayer(e.target.value)
             }}>
-            <option disabled value>Select Character</option>
+            <option disabled selected value>Select Character</option>
                 {characterList.map(character => (
                     <option value={character}>{character}</option>
                 ))}
             </select>
+
+            <h3>Player One: {playerOne}</h3>
         </div>
     )
 }

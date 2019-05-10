@@ -32,23 +32,34 @@
   }
 }
 
+.tic-tac-tyrion-container {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  /* align-items: center; */
 
+}
 .ticTacToeBoard  {
+  border: 5px solid black;
   width:50%;
-  display: grid;
+  /* height:500px; */
+  display: inline-grid;
   justify-items: center;
   margin:auto;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: repeat(3, 33%);
+  grid-auto-rows: 1fr;
+  grid-column-gap: none;
+
 }
 
 /* we may change this so the size is flexible... which would mean the div for the board has to be 
 forced to a square size.... */
 .ticTacToeSquare {
-  /* height:30%; */
   width:100%;
+  height:8rem;
   padding-top:10%;  /* forces square shape */
   padding-bottom:10%;
+  margin: 0 auto;
   font-size:10vw;
   border:2px red solid;
 }

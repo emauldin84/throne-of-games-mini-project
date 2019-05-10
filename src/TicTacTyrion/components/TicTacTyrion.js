@@ -30,15 +30,19 @@ export default class TicTacTyrion extends Component {
 
         }
     }
+
     render() {
         return (
         <div>
-            <h1>TicTacTyrion</h1>
-            <PlayerOne characters={characters} playerOne={this.state.playerOne} playerTwo={this.state.playerTwo} setPlayer={this._setPlayerOne}/>
-            <Board board={this.state.board} clickHandler={this._setCell} />
-            <PlayerTwo characters={characters} playerOne={this.state.playerOne} playerTwo={this.state.playerTwo} setPlayer={this._setPlayerTwo}/>
-            {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
-            <Result winner={this.state.winner} clickHandler={this._newGame}/> 
+            <h1>Tic-Tac-Tyrion</h1>
+            <div className='tic-tac-tyrion-container'>
+                <PlayerOne characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerOneName}/>
+                <Board board={this.state.board} clickHandler={this._setCell} />
+                <PlayerTwo characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerTwoName}/>
+                {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
+
+            </div>
+                <Result winner={this.state.winner} clickHandler={this._newGame}/> 
         
         </div>
         )
