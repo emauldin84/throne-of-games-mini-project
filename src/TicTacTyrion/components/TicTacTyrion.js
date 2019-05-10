@@ -62,20 +62,42 @@ export default class TicTacTyrion extends Component {
                 board: tempBoard,
                 
             })
-            console.log(tempBoard)
+            console.log("the current board", this.state.board)
         
         }
 
         _checkForWinner = () => {
+
+            const Row1 = [this.state.board.A1, this.state.board.B1, this.state.board.C1]
+            const Row2 = [this.state.board.A2, this.state.board.B2, this.state.board.C2]
+            const Row3 = [this.state.board.A3, this.state.board.B3, this.state.board.C3]
+console.log(this.state.board);
+            let winner = this.state.winner
+            if (checkArrayForWin(Row1) || checkArrayForWin(Row2) || checkArrayForWin(Row3)) {
+                //if true for any one array - there is a winner
+                if (this.state.isPlayerOneTurn) {
+                     winner = "Player 1"
+                }
+                else {
+                     winner = "Player 2"
+                }
+                
+            }
+            console.log("the winner is ", winner);
+            // else {
+            //     //no winner
+            //     counter +1 unloess at 9
+            // }
+
             // set turn counter
                 
             // set player turn
             // set winner
             this.setState({
 
-                turnCounter: ,
-                isPlayerOneTurn: !isPlayerOneTurn,
-                winner: ,
+                // turnCounter: ,
+                isPlayerOneTurn: !this.state.isPlayerOneTurn,
+                winner: winner,
 
 
             })
@@ -90,3 +112,16 @@ export default class TicTacTyrion extends Component {
     
 
     }
+
+function checkArrayForWin(array) {
+    console.log(array[0], array[1], array[2])
+    if ((array[0] === array[1]) && (array[1] === array[2]) &&  (array[0] !== null)) {
+        console.log("they are the same")
+        return true;
+        
+    }
+    else {
+        console.log("they are not the same")
+        return false;
+    }
+}
