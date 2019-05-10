@@ -33,7 +33,7 @@ export default class TicTacTyrion extends Component {
         <div>
             <h1>TicTacTyrion</h1>
             {/* <PlayerOne /> */}
-            <Board board={this.state.board} clickHandler={this._setCell} checkWinner={this._checkForWinner}/>
+            <Board board={this.state.board} clickHandler={this._setCell} />
             {/* <PlayerTwo /> */}
             {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
             {/* <Result />  */}
@@ -52,57 +52,61 @@ export default class TicTacTyrion extends Component {
 
         _setCell = (cell) => {
             // sets value of cell depending on the player turn
-            const tempBoard = {...this.state.board}
-            if (this.state.isPlayerOneTurn) {
-                tempBoard[cell] = 'X'
-            } else {
-                tempBoard[cell] = 'O'
-            }
-            this.setState({
-                board: tempBoard,
-                
-            })
-            console.log("the current board", this.state.board)
-        
-        }
+            if (!this.state.winner) {
 
-        _checkForWinner = () => {
+                    const tempBoard = {...this.state.board}
+                    if (this.state.isPlayerOneTurn) {
+                        tempBoard[cell] = 'X'
+                    } else {
+                        tempBoard[cell] = 'O'
+                    }
+                    
+                    console.log("the current board", this.state.board)
+            
+                    const Row1 = [tempBoard.A1, tempBoard.B1, tempBoard.C1]
+                    const Row2 = [tempBoard.A2, tempBoard.B2, tempBoard.C2]
+                    const Row3 = [tempBoard.A3, tempBoard.B3, tempBoard.C3]
+                    const Col1 = [tempBoard.A1, tempBoard.A2, tempBoard.A3]
+                    const Col2 = [tempBoard.B1, tempBoard.B2, tempBoard.B3]
+                    const Col3 = [tempBoard.C1, tempBoard.C2, tempBoard.C3]
+                    const Diag1 = [tempBoard.A1, tempBoard.B2, tempBoard.C3]
+                    const Diag2 = [tempBoard.A3, tempBoard.B2, tempBoard.C1]
+            
+                    let winner = this.state.winner
+                    if (checkArrayForWin(Row1)|| checkArrayForWin(Row2) || checkArrayForWin(Row3) ||
+                    checkArrayForWin(Col1) || checkArrayForWin(Col2) || checkArrayForWin(Col3) ||
+                    checkArrayForWin(Diag1) || checkArrayForWin(Diag2) ) {
+                        //if true for any one array - there is a winner
+                        if (this.state.isPlayerOneTurn) {
+                            winner = "Player 1"
+                        }
+                        else {
+                            winner = "Player 2"
+                        }
+                        
+                    }
 
-            const Row1 = [this.state.board.A1, this.state.board.B1, this.state.board.C1]
-            const Row2 = [this.state.board.A2, this.state.board.B2, this.state.board.C2]
-            const Row3 = [this.state.board.A3, this.state.board.B3, this.state.board.C3]
-console.log(this.state.board);
-            let winner = this.state.winner
-            if (checkArrayForWin(Row1) || checkArrayForWin(Row2) || checkArrayForWin(Row3)) {
-                //if true for any one array - there is a winner
-                if (this.state.isPlayerOneTurn) {
-                     winner = "Player 1"
+                    console.log("the winner is ", winner);
+                    // else {
+                    //     //no winner
+                    //     counter +1 unloess at 9
+                    // }
+
+                    // set turn counter
+                        
+                    // set player turn
+                    // set winner
+
+                    this.setState({
+                        board: tempBoard,
+                        turnCounter: this.state.turnCounter + 1,
+                        isPlayerOneTurn: !this.state.isPlayerOneTurn,
+                        winner: winner,
+                        })
+                        
                 }
-                else {
-                     winner = "Player 2"
-                }
-                
+
             }
-            console.log("the winner is ", winner);
-            // else {
-            //     //no winner
-            //     counter +1 unloess at 9
-            // }
-
-            // set turn counter
-                
-            // set player turn
-            // set winner
-            this.setState({
-
-                // turnCounter: ,
-                isPlayerOneTurn: !this.state.isPlayerOneTurn,
-                winner: winner,
-
-
-            })
-        }
-
         _newGame = () => {
             // reset board
             // reset counter
@@ -111,8 +115,11 @@ console.log(this.state.board);
 
     
 
-    }
+    
+}
 
+
+//helper function
 function checkArrayForWin(array) {
     console.log(array[0], array[1], array[2])
     if ((array[0] === array[1]) && (array[1] === array[2]) &&  (array[0] !== null)) {
