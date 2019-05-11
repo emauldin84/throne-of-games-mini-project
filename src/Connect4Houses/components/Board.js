@@ -4,7 +4,7 @@ export default function Board({board, clickHandler, playerOneName, playerTwoName
 
     const player1png = "./imgs/fire-circle.gif" ;
     // const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
-    const player2png = "./imgs/fire-circle.gif";
+    const player2png = "./imgs/ice.gif";
     // const player2png = `./imgs/${replaceSpaceWithHyphen(playerTwoName)}.png`
     const blank = "./imgs/blank.png";
 
@@ -18,38 +18,40 @@ const cellNames =
 
 
     return (
-        
-        <div className='connect4housesBoard'>
-        {cellNames.map((square,i) => (
-                <div className='connect4housesSquare' 
-                    key={i}
-                     onClick={()  => {
-                        if (board[square] === null) {          
-                        clickHandler(square)
-                        }
-                
-                    }}>
-                    {/* {square} */}
-                <img 
-                    className={board[square] === 'O' ? "flipped" : ""}
-                    src={board[square] ? ( board[square] === 'X' ? player1png : player2png) : blank} alt="fireOrIceGif" />
-                </div>
-            
 
-        ))}
+        <div className="masterGrid">
+            <div className="dropArea"
+                onMouseOver={(e) => {
+                    console.log("on mouse over: ", e);
+                }}
+                
+                > </div>
+
+                
+                    <div className='connect4housesBoard'>
+                    {/* backgroundImage='./imgs/rockwall.png' > */}
+                
+                    {cellNames.map((square,i) => (
+                        <div className='connect4housesSquare' 
+                            key={i}
+                            onClick={()  => {
+                                if (board[square] === null) {          
+                                clickHandler(square)
+                                }
+                            }}>
+                            {/* {square} */}
+                        <img 
+                            className={board[square] === 'O' ? "flipped" : ""}
+                            src={board[square] ? ( board[square] === 'X' ? player1png : player2png) : blank} 
+                            alt="fireOrIceGif" />
+                        </div>
+
+                    ))}
+                    
+                    </div>
+
         </div>
     )
-
 }
 
-;
-//helper function
-function replaceSpaceWithHyphen(text) {
-    var map = {
-        ' ' : '-',
-    }
-    return text.replace(/[ ]/g,function(m) {
-        return map[m];
-    })
-}
 

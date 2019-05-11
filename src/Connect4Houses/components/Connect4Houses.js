@@ -25,7 +25,7 @@ const  blankBoard = {
     'E5': null,     'F5': null,    'G5': null, 
 }
 
-export default class TicTacTyrion extends Component {
+export default class Connect4Houses extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -91,7 +91,7 @@ export default class TicTacTyrion extends Component {
                 tempBoard[cell] = 'O'
             }
             
-            console.log("the current board", tempBoard)
+            // console.log("the current board", tempBoard)
     
             //this sorts all the pieces into arrays that can possibly have a win,
             //then each array is analyzed with a function
@@ -202,7 +202,7 @@ function checArrayForWinner(array) {
          (array[i+1] === array[i+2]) &&
          (array[i+2] === array[i+3]) &&
          (array[i] !== null)) {
-            console.log("this array wins, ", array)
+            // console.log("this array wins, ", array)
                 test = true
                }
         }
