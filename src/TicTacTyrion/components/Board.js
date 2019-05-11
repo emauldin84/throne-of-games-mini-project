@@ -1,12 +1,16 @@
 import React from 'react'
 
-export default function Board({board, clickHandler, checkWinner}) {
 
-    //we have to set these based on the player1 and player2 and fill in the spaces with hyphens.  
-    //but it works!
-    const player1png = "./imgs/Arya-Stark.png" ;
-    const player2png = "./imgs/The-Hound.png";
+
+export default function Board({board, clickHandler, checkWinner, playerOneName, playerTwoName}) {
+
+    // const player1png = "./imgs/Arya-Stark.png" ;
+    const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
+    // const player2png = "./imgs/The-Hound.png";
+    const player2png = `./imgs/${replaceSpaceWithHyphen(playerTwoName)}.png`
     const blank = "./imgs/blank.png";
+
+    console.log("testing function", replaceSpaceWithHyphen("arya and me gets changed.png"));
 
     return (
         <div className='ticTacToeBoard'>
@@ -14,8 +18,9 @@ export default function Board({board, clickHandler, checkWinner}) {
                 if (board.A1 === null) {
                 clickHandler('A1')
                 }
-            // }}>{board.A1}</div>    
+              
             }}>
+             {/* {board.A1} */}
             <img 
             className={board.A1 === 'O' ? "flipped" : ""}
             src={board.A1 ? ( board.A1 === 'X' ? player1png : player2png) : blank} alt="sprite" />
@@ -118,6 +123,14 @@ export default function Board({board, clickHandler, checkWinner}) {
     )
 }
 
-
-
+;
+//helper function
+function replaceSpaceWithHyphen(text) {
+    var map = {
+        ' ' : '-',
+    }
+    return text.replace(/[ ]/g,function(m) {
+        return map[m];
+    })
+}
 
