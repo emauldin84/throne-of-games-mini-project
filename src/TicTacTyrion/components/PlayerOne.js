@@ -9,10 +9,14 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer}
         <div>
             <select onChange={(e) => {
                 setPlayer(e.target.value)
-            }}>
-            <option disabled selected value>Select Character</option>
-                {characterList.map(character => (
-                    <option value={character}>{character}</option>
+            }}
+            defaultValue={playerOne}
+            >
+            <option key={-1} disabled 
+                // selected={playerOne === "Player One"} 
+                value="Player One">Select Character</option>
+                {characterList.map((character,i) => (
+                    <option key={i} value={character}>{character}</option>
                 ))}
             </select>
 

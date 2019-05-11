@@ -37,7 +37,10 @@ export default class TicTacTyrion extends Component {
             <h1>Tic-Tac-Tyrion</h1>
             <div className='tic-tac-tyrion-container'>
                 <PlayerOne characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerOneName}/>
-                <Board board={this.state.board} clickHandler={this._setCell} />
+                <Board board={this.state.board} 
+                            clickHandler={this._setCell}
+                            playerOneName={this.state.playerOneName}
+                            playerTwoName={this.state.playerTwoName} />
                 <PlayerTwo characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerTwoName}/>
                 {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
 
