@@ -10,7 +10,7 @@ export default function Board({board, clickHandler, checkWinner, playerOneName, 
     const player2png = `./imgs/${replaceSpaceWithHyphen(playerTwoName)}.png`
     const blank = "./imgs/blank.png";
 
-    console.log("testing function", replaceSpaceWithHyphen("arya and me gets changed.png"));
+    // console.log("testing function", replaceSpaceWithHyphen("arya and me gets changed.png"));
 
     return (
         <div className='ticTacToeBoard'>
