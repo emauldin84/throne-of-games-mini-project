@@ -53,6 +53,20 @@
 
 }
 
+.connect4housesBoard {
+ border:5px solid black;
+ width:80%;
+ display: grid;
+ margin: auto;
+ /* there are 7 colums, 6 rows */
+ grid-template-columns: repeat(7, 14.2857%);
+ grid-column-gap: none;
+ grid-row-gap:0;
+ /* row-gap:10px; */
+ /* padding:0; */
+
+}
+
 /* we may change this so the size is flexible... which would mean the div for the board has to be 
 forced to a square size.... */
 .ticTacToeSquare {
@@ -65,9 +79,21 @@ forced to a square size.... */
   /* font-size:10vw; */
   border:2px red solid;
 }
+div .connect4housesSquare {
+  border: 2px blue solid; 
+  width:100%;
+  max-height:100%;
+
+}
 
 .ticTacToeSquare img {
   width:100%;
+}
+.connect4housesSquare img {
+  width:100%;
+  /* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
+  display:block;   
+
 }
 
 .flipped {
