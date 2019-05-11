@@ -32,21 +32,26 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .tic-tac-tyrion-container {
   display: flex;
   align-items: top;
-  justify-content: center;
+  justify-content:space-evenly;
   /* align-items: center; */
 
 }
 .ticTacToeBoard  {
-  border: 5px solid black;
+  /* border: 5px solid black; */
   width:50%;
   /* height:500px; */
   /* display: inline-grid; */
   display:grid;
   /* justify-items: center; */
-  margin:auto;
+  /* margin:auto; */
   grid-template-columns: repeat(3, 33.33%);
   /* grid-auto-rows: 1fr; */
   grid-column-gap: none;
@@ -63,7 +68,7 @@ forced to a square size.... */
   /* padding-bottom:10%; */
   /* margin: 0 auto; */
   /* font-size:10vw; */
-  border:2px red solid;
+  border:2px black solid;
 }
 
 .ticTacToeSquare img {
@@ -72,4 +77,10 @@ forced to a square size.... */
 
 .flipped {
   transform: scaleX(-1);
+}
+
+.playerTurn {
+  background-color: #fff2ac;
+  background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+  text-align:center;
 }

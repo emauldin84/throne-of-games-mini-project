@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer }) {
+export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer, turn}) {
     const characterList = characters.filter(character => (
         character !== playerOne
     ))
@@ -20,7 +20,7 @@ export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer 
                     <option key={i} value={character}>{character}</option>
                 ))}
             </select>
-            <h3>Player Two: {playerTwo}</h3>
+            <h3 className = {!turn ? 'playerTurn' : null}>{playerTwo}</h3>
         </div>
     )
 }

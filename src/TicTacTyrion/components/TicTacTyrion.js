@@ -36,16 +36,29 @@ export default class TicTacTyrion extends Component {
         <div>
             <h1>Tic-Tac-Tyrion</h1>
             <div className='tic-tac-tyrion-container'>
-                <PlayerOne characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerOneName}/>
-                <Board board={this.state.board} 
-                            clickHandler={this._setCell}
-                            playerOneName={this.state.playerOneName}
-                            playerTwoName={this.state.playerTwoName} />
-                <PlayerTwo characters={characters} playerOne={this.state.playerOneName} playerTwo={this.state.playerTwoName} setPlayer={this._setPlayerTwoName}/>
+                <PlayerOne 
+                    characters={characters} 
+                    playerOne={this.state.playerOneName} 
+                    playerTwo={this.state.playerTwoName}
+                    turn={this.state.isPlayerOneTurn}
+                    setPlayer={this._setPlayerOneName}/>
+                <Board 
+                    board={this.state.board} 
+                    clickHandler={this._setCell}
+                    playerOneName={this.state.playerOneName}
+                    playerTwoName={this.state.playerTwoName} />
+                <PlayerTwo 
+                    characters={characters} 
+                    playerOne={this.state.playerOneName} 
+                    playerTwo={this.state.playerTwoName}
+                    turn={this.state.isPlayerOneTurn}
+                    setPlayer={this._setPlayerTwoName} />
                 {/* Result to display start button or display who won (or lion-scratch) with a play again at end of game */}
 
             </div>
-                <Result winner={this.state.winner} clickHandler={this._newGame}/> 
+                <Result 
+                    winner={this.state.winner} 
+                    clickHandler={this._newGame}/> 
         
         </div>
         )
@@ -126,7 +139,7 @@ export default class TicTacTyrion extends Component {
         _newGame = () => {
             //not changing player names
             this.setState({
-                isPlayerOneTurn: false,
+                isPlayerOneTurn: true,
                 // Letters for columns, numbers for rows
                 // There will be eight arrays containing the board values ('X', 'O' or null) that will be checked after each turn. 
                 board: {
