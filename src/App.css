@@ -48,6 +48,13 @@
   width:100%;
   position: relative;
 }
+.coinToDrop {
+  height:30px;
+  width:30px;
+  background-color:purple;
+  position: absolute;
+  top:0;
+}
 .setwidthhere {
   z-index: -5;
   width:100%;

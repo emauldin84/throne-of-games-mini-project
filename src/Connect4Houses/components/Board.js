@@ -1,4 +1,5 @@
 import React from 'react'
+import DropArea from './DropArea';
 
 export default function Board({board, clickHandler, playerOneName, playerTwoName}) {
 
@@ -16,17 +17,14 @@ const cellNames =
     'A1','B1','C1','D1','E1','F1','G1', 
     'A0','B0','C0','D0','E0','F0','G0', ]
 
+    const coinXpos = -100;
+    let coinStyle = {left:coinXpos}
 
     return (
 
         <div className="masterGrid">
-            <div className="dropArea"
-                onMouseOver={(e) => {
-                    console.log("on mouse over: ", e);
-                }}
-                
-                > </div>
-
+            
+            <DropArea />
                 
                     <div className='connect4housesBoard'>
                     {/* backgroundImage='./imgs/rockwall.png' > */}
