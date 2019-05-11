@@ -139,7 +139,9 @@ export default class TicTacTyrion extends Component {
         _newGame = () => {
             //not changing player names
             this.setState({
-                isPlayerOneTurn: true,
+
+                isPlayerOneTurn: true,  //should always start true so figures face correct direction
+
                 // Letters for columns, numbers for rows
                 // There will be eight arrays containing the board values ('X', 'O' or null) that will be checked after each turn. 
                 board: {
