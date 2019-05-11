@@ -17,9 +17,8 @@ const cellNames =
     'A1','B1','C1','D1','E1','F1','G1', 
     'A0','B0','C0','D0','E0','F0','G0', ]
 
-    const coinXpos = -100;
-    let coinStyle = {left:coinXpos}
 
+    
     return (
 
         <div className="masterGrid">
