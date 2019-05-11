@@ -1,6 +1,11 @@
+body {
+  background: url('./weirwood-tree.jpeg') no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 .App {
   text-align: center;
-  
+
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -31,6 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
 
@@ -111,21 +117,28 @@
 
 /**************TIC TAC TYRION CSS *************************************************************/
 
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
 .tic-tac-tyrion-container {
   display: flex;
   align-items: top;
-  justify-content: center;
+  justify-content:space-evenly;
   /* align-items: center; */
 
 }
 .ticTacToeBoard  {
-  border: 5px solid black;
-  width:50%;
+  /* border: 5px solid black; */
+  width:35%;
   /* height:500px; */
   /* display: inline-grid; */
   display:grid;
   /* justify-items: center; */
-  margin:auto;
+  /* margin:auto; */
   grid-template-columns: repeat(3, 33.33%);
   /* grid-auto-rows: 1fr; */
   grid-column-gap: none;
@@ -142,7 +155,8 @@ forced to a square size.... */
   /* padding-bottom:10%; */
   /* margin: 0 auto; */
   /* font-size:10vw; */
-  border:2px red solid;
+  border:2px black solid;
+  background-color: rgba(0,0,0,.2);
 }
 
 .ticTacToeSquare img {
@@ -151,4 +165,80 @@ forced to a square size.... */
 
 .flipped {
   transform: scaleX(-1);
+}
+button {
+  padding: 10px;
+  font-size: 20px;
+  /* margin: 20px; */
+  color: white;
+  background: rgba(0,0,0,.7);
+}
+.playerTurn {
+  color: white;
+  background-color: rgba(0,0,0,.7);
+  text-align:center;
+  padding: 5px;
+}
+.player-div {
+  width: 171.29px;
+}
+h3 {
+  font-weight: normal;
+  margin: 18.72px 0;
+  padding: 5px;
+  color: white;
+}
+
+.result {
+  color: white;
+  width: 50%;
+	height: 45px;
+  background-color: rgba(0,0,0,.7);
+  padding: 10px;
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: auto;
+}
+
+.pulse {
+  color: white;
+  background: rgba(0,0,0,.7);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0,0,0,.7);
+  animation: pulse 1.5s infinite;
+  margin: 20px;
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
+    box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
+      box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
+      box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
+  }
 }
