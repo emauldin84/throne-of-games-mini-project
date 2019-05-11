@@ -7,7 +7,7 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer,
     characterList.sort()
     
     return (
-        <div>
+        <div className='player-div'>
             <select onChange={(e) => {
                 setPlayer(e.target.value)
             }}
@@ -21,7 +21,7 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer,
                 ))}
             </select>
 
-            <h3 className = {turn ? 'playerTurn' : null}>{playerOne}</h3>
+            <h3 className={turn ? 'playerTurn' : null}>{playerOne}</h3>
         </div>
     )
 }

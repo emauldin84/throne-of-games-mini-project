@@ -6,7 +6,7 @@ export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer,
     ))
     characterList.sort()
     return (
-        <div>
+        <div className='player-div'>
             <select onChange={(e) => {
                 setPlayer(e.target.value)
             }}

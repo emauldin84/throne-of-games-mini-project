@@ -33,7 +33,7 @@ export default class TicTacTyrion extends Component {
 
     render() {
         return (
-        <div>
+        <div className='game-container'>
             <h1>Tic-Tac-Tyrion</h1>
             <div className='tic-tac-tyrion-container'>
                 <PlayerOne 
@@ -113,7 +113,7 @@ export default class TicTacTyrion extends Component {
                     }
 
                     if ((this.state.turnCounter === 8) && (winner === null)) {
-                        winner = "Lion Scratch";
+                        winner = "Draw";
                     }
 
                     // else {
