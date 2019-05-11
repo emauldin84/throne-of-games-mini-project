@@ -18,7 +18,7 @@ export default function Board({board, clickHandler, checkWinner, playerOneName, 
                 if (board.A1 === null) {
                 clickHandler('A1')
                 }
-              
+            
             }}>
              {/* {board.A1} */}
             <img 

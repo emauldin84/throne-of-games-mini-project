@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer}) {
+export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer, turn}) {
     const characterList = characters.filter(character => (
         character !== playerTwo
     ))
     characterList.sort()
+    
     return (
-        <div>
+        <div className='player-div'>
             <select onChange={(e) => {
                 setPlayer(e.target.value)
             }}
@@ -20,7 +21,8 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer}
                 ))}
             </select>
 
-            <h3>Player One: {playerOne}</h3>
+            <h3 className={turn ? 'playerTurn' : null}>{playerOne}</h3>
         </div>
     )
 }
+
