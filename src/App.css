@@ -58,9 +58,19 @@ H1 {
 }
 .dropArea {
   /* height: 20px; */
-  border:2px green solid;
+  /* border:2px green solid; */
   width:100%;
   position: relative;
+  background-color: rgba(0,0,0,.7);
+  z-index: 4;
+  
+}
+.dropArea P {
+  color:rgba(255,255,255,.6);
+  /* position: absolute;
+  top:0; */
+  /* z-index: 1; */
+  cursor: default;
 }
 .coinToDrop {
   /* height:90%; */
@@ -69,6 +79,14 @@ H1 {
   position: absolute;
   top:0;
 }
+/* .dropAreaText {
+  width:100%;
+  color: white;
+  position: absolute;
+  top:0;
+  cursor: default;
+  text-align: center;
+} */
 .boardcontainer {
   position: relative;
   width:100%;
