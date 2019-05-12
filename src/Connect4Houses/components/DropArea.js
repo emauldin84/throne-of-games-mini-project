@@ -21,16 +21,25 @@ export default class DropArea extends Component {
             ref={this.dropAreaRef}
 
                 onMouseMove={(e) => {
-                    // console.log("on mouse over: ", e.clientX);
+                    console.log("on mouse over: ", e.clientX);
                     // console.log("my new ref width", this.dropAreaRef.current.offsetWidth)
                     // console.log("better left is ", this.dropAreaRef.current.offsetLeft)
                     // let coinStyle ={left:this.state.xpos}
 
                     //this updates the icon position on screen
-                    this.setState({
-                        // style:{left: e.clientX - e.nativeEvent.srcElement.offsetLeft}
-                        style:{left: e.clientX - this.dropAreaRef.current.offsetLeft}
-                    })
+
+                    //SOMEHOW, the div image can inherit this onmousemove event,
+                    //which allows you to drag the image to the right.
+                    //so, i will prevcent that
+
+                    if ((e.clientX - (this.dropAreaRef.current.offsetLeft + this.dropAreaRef.current.offsetWidth )) <= 0) {
+
+                        this.setState({
+                            // style:{left: e.clientX - e.nativeEvent.srcElement.offsetLeft}
+                            style:{left: e.clientX - this.dropAreaRef.current.offsetLeft}
+                        })
+
+                    }
                 }}
                 onClick={(e) => {
 
@@ -56,8 +65,9 @@ export default class DropArea extends Component {
                 }}
                 
                 > 
-                <div >             
-                      <p>CLICK TO DROP HERE</p>
+                <div >     
+                            {/* SOMEHOW THE IMAGE IS INHERITING THE ON-MOUSE-OVER EVENT */}
+                      <p>CLICK HERE TO DROP</p>
 
                 <img className="coinToDrop" style={this.state.style} 
                 src= {this.props.player ? "./imgs/fire-ball.png" : "./imgs/ice-ball.png" } 
