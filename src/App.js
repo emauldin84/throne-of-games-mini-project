@@ -18,7 +18,7 @@ function App() {
       
         <Switch>
           <Route exact path='/' component={ Dashboard } />
-          <Route path ='/tic-tac-tyrion' component={ TicTacTyrion } />
+          <Route className='tic-tac-tyrion' path ='/tic-tac-tyrion' component={ TicTacTyrion } />
           <Route path ='/connect-four-houses' component={Connect4Houses}  />
         </Switch>
       </div>

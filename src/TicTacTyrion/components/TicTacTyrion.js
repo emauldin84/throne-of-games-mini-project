@@ -33,7 +33,8 @@ export default class TicTacTyrion extends Component {
 
     render() {
         return (
-        <div className='game-container'>
+        <div className='tic-tac-tyrion-main'>
+            <link rel="StyleSheet" type="text/css" href="../styles/tic-tac-tyrion.css" />
             <h1>Tic-Tac-Tyrion</h1>
             <div className='tic-tac-tyrion-container'>
                 <PlayerOne 
