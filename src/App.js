@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Link to='/'><h2 className='title'>Throne of Games!</h2></Link>
+      <Link to='/'><h2 className='title7'>Throne of Games!</h2></Link>
       
         <Switch>
           <Route exact path='/' component={ Dashboard } />

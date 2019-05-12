@@ -37,14 +37,6 @@ h1 {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
@@ -179,6 +171,7 @@ button {
   /* margin: 20px; */
   color: white;
   background: rgba(0,0,0,.7);
+  cursor: pointer;
 }
 .playerTurn {
   color: white;
@@ -194,6 +187,17 @@ h3 {
   margin: 18.72px 0;
   padding: 5px;
   color: white;
+}
+.custom-select {
+  color: white;
+  background-color: rgba(0,0,0,.7);
+  position: relative;
+  cursor: pointer;
+}
+
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .result {
