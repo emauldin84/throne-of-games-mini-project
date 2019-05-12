@@ -9,8 +9,8 @@ body {
   background-position: center;
   font-family: GOTFFT;
 }
-H1 {
-  font-family: GOTFFF;
+h1 {
+  font-family: GOTFFT;
 }
 .App {
   text-align: center;
