@@ -1,7 +1,16 @@
+@font-face {
+  font-family: GOTFFT;
+  src: url('./fonts/Game-of-Thrones.ttf');
+}
+
 body {
   background: url('./weirwood-tree.jpeg') no-repeat;
   background-attachment: fixed;
   background-position: center;
+  font-family: GOTFFT;
+}
+h1 {
+  font-family: GOTFFT;
 }
 .App {
   text-align: center;
@@ -39,67 +48,66 @@ body {
 
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
-
 .masterGrid {
   /* this should be a percentage of the screen width */
-  width:70%;    
+  width:80vh;    
   margin: auto;
   display:grid;
-  grid-template-rows: 10% 100%;
+  grid-template-rows: 10fr 90fr ;
 
 }
 .dropArea {
   /* height: 20px; */
-  border:2px green solid;
+  /* border:2px green solid; */
   width:100%;
   position: relative;
+  background-color: rgba(0,0,0,.7);
+  z-index: 4;
+  
+}
+.dropArea P {
+  color:rgba(255,255,255,.6);
+  /* position: absolute;
+  top:0; */
+  /* z-index: 1; */
+  cursor: default;
 }
 .coinToDrop {
-  height:30px;
+  /* height:90%; */
   width:30px;
-  background-color:purple;
+  /* background-color:purple; */
   position: absolute;
   top:0;
 }
-.setwidthhere {
-  z-index: -5;
+/* .dropAreaText {
   width:100%;
-  /* margin: auto; */
+  color: white;
+  position: absolute;
+  top:0;
+  cursor: default;
+  text-align: center;
+} */
+.boardcontainer {
   position: relative;
-    /* background-image: url('./imgs/rockwall.png'); */
-    object-fit: cover;
-
+  width:100%;
 }
 
-/* RIGHT NOW NOT BEING USED....
-   AND IMAGE TAG IS BEING USING INSTEAD */
-.overlaydiv {
-  background-image: url('./imgs/rockwall.png');
-  /* z-index: 5; */
-  /* width:100%; */
-  /* object-fit: cover; */
-  /* background-repeat: none; */
-  position: relative;
-  /* top:0; */
-  /* left:0; */
+.overlaydiv img{
+
+  z-index: 25;
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
 }
+
+
 .connect4housesBoard {
   /* border:5px solid black; */
   width:100%;
   display: grid;
   /* there are 7 colums, 6 rows */
   grid-template-columns: repeat(7, 14.2857%);
-  background-image: url('./imgs/rockwall.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  /* position: absolute;
-  top:0;
-  left:0; */
-  /* uncomment this once we get the drop working... */
-  /* this will pull the image on top...but when we do that, the cells are no longer clickable */
-
-  /* z-index: -5; */
  
  }
  div .connect4housesSquare {
@@ -112,7 +120,6 @@ body {
   width:100%;
   /* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
   display:block;   
-  z-index:-5;
 }
 
 /**************TIC TAC TYRION CSS *************************************************************/
@@ -202,7 +209,8 @@ h3 {
 	left: 0;
 	right: 0;
 
-	margin: auto;
+  margin: auto;
+  z-index:40;
 }
 
 .pulse {

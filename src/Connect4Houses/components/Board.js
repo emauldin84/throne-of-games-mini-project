@@ -1,8 +1,9 @@
 import React from 'react'
 import DropArea from './DropArea';
 
-export default function Board({board, clickHandler, playerOneName, playerTwoName}) {
+export default function Board({board, clickHandler, playerOneName, playerTwoName, getDropColumnFun, playerOne}) {
 
+    // console.log("this shoudl bve ture or false for player one", playerOne)
     const player1png = "./imgs/fire-circle.gif" ;
     // const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
     const player2png = "./imgs/ice.gif";
@@ -21,21 +22,17 @@ const cellNames =
     return (
 
         <div className="masterGrid">
-            
-            <DropArea />
+        
+            <DropArea getDropColumnFun={getDropColumnFun} player={playerOne}/>
+
+            <div className="boardcontainer">
+                
                 
                     <div className='connect4housesBoard'>
-                    {/* backgroundImage='./imgs/rockwall.png' > */}
-                
+                       
                     {cellNames.map((square,i) => (
                         <div className='connect4housesSquare' 
-                            key={i}
-                            onClick={()  => {
-                                if (board[square] === null) {          
-                                clickHandler(square)
-                                }
-                            }}>
-                            {/* {square} */}
+                            key={i}>
                         <img 
                             className={board[square] === 'O' ? "flipped" : ""}
                             src={board[square] ? ( board[square] === 'X' ? player1png : player2png) : blank} 
@@ -43,9 +40,11 @@ const cellNames =
                         </div>
 
                     ))}
-                    
-                    </div>
-
+                        </div>
+                <div className="overlaydiv">
+                <img src="../imgs/rockwall.png" alt="rock wall overlay for connect 4" />
+                </div>
+            </div>
         </div>
     )
 }
