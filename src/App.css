@@ -42,7 +42,7 @@ body {
 
 .masterGrid {
   /* this should be a percentage of the screen width */
-  width:70%;    
+  width:70vh;    
   margin: auto;
   display:grid;
   grid-template-rows: 10% 100%;

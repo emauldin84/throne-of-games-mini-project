@@ -1,7 +1,7 @@
 import React from 'react'
 import DropArea from './DropArea';
 
-export default function Board({board, clickHandler, playerOneName, playerTwoName}) {
+export default function Board({board, clickHandler, playerOneName, playerTwoName, getDropColumnFun}) {
 
     const player1png = "./imgs/fire-circle.gif" ;
     // const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
@@ -21,8 +21,9 @@ const cellNames =
     return (
 
         <div className="masterGrid">
+        
+            <DropArea getDropColumnFun={getDropColumnFun} />
             
-            <DropArea />
                 
                     <div className='connect4housesBoard'>
                     {/* backgroundImage='./imgs/rockwall.png' > */}
@@ -33,6 +34,7 @@ const cellNames =
                             onClick={()  => {
                                 if (board[square] === null) {          
                                 clickHandler(square)
+                                // getDropColumnFun("55")
                                 }
                             }}>
                             {/* {square} */}

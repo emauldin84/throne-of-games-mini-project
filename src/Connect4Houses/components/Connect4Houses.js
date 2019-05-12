@@ -52,7 +52,8 @@ export default class Connect4Houses extends Component {
                 <Board board={this.state.board} 
                             clickHandler={this._setCell}
                             playerOneName={this.state.playerOneName}
-                            playerTwoName={this.state.playerTwoName} />
+                            playerTwoName={this.state.playerTwoName} 
+                            getDropColumnFun={this._getDropColumn}/>
 
                 {/* <PlayerTwo characters={characters} 
                     playerOne={this.state.playerOneName} 
@@ -178,7 +179,9 @@ export default class Connect4Houses extends Component {
         }
 
     
-
+        _getDropColumn = (dropColumn) => {
+            console.log("The drop column returned to main state from DropArea component is ", dropColumn);
+        }
     
 }
 
