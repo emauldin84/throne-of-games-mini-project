@@ -5,10 +5,10 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer,
         character !== playerTwo
     ))
     characterList.sort()
-    
     return (
         <div className='player-div'>
-            <select onChange={(e) => {
+            <h3 className={turn ? 'playerTurn' : null}>{playerOne}</h3>
+            <select className='custom-select' onChange={(e) => {
                 setPlayer(e.target.value)
             }}
             defaultValue={playerOne}
@@ -21,7 +21,7 @@ export default function PlayerOne({ characters, playerOne, playerTwo, setPlayer,
                 ))}
             </select>
 
-            <h3 className={turn ? 'playerTurn' : null}>{playerOne}</h3>
+            
         </div>
     )
 }
