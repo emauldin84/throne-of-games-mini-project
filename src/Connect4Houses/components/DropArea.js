@@ -32,7 +32,7 @@ export default class DropArea extends Component {
 
                     // split the width into 7 rows.
                     const dropColumn = parseInt((e.screenX - e.nativeEvent.srcElement.offsetLeft) / (e.nativeEvent.srcElement.scrollWidth / 7)) + 1
-                    // console.log("The column to drop in is " ,dropColumn);
+                    console.log("The column to drop in is " ,dropColumn);
                     this.props.getDropColumnFun(dropColumn);
                 }}
                 

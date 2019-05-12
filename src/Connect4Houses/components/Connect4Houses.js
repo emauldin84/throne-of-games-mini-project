@@ -33,8 +33,16 @@ export default class Connect4Houses extends Component {
             playerTwoName: 'Ice', // player two is always 'O'
             isPlayerOneTurn: true,
             board: blankBoard,
+            columnA:[],
+            columnB:[],
+            columnC:[],
+            columnD:[],
+            columnE:[],
+            columnF:[],
+            columnG:[],
             turnCounter: 0,  //max is 6*7 = 42
             winner: null, // after turnCounter = 42 check array, then result in 'draw' if no arrays === true. Otherwise, 'player one' or 'player two' 
+            colToAdd:null,
 
         }
     }
@@ -81,19 +89,44 @@ export default class Connect4Houses extends Component {
             })
         }
 
-        _setCell = (cell) => {
-            // sets value of cell depending on the player turn
-            if (!this.state.winner) {
 
-            const tempBoard = {...this.state.board}  //a true shallow copy
-            if (this.state.isPlayerOneTurn) {
-                tempBoard[cell] = 'X'
-            } else {
-                tempBoard[cell] = 'O'
-            }
-            
-            // console.log("the current board", tempBoard)
+
+        _newGame = () => {
+            //not changing player names
+            this.setState({
+                isPlayerOneTurn: true,  //should always start with true...so figures face correct direction
+                board: blankBoard,
+                turnCounter: 0,
+                winner: null,  
+            })
+        }
+
     
+        _getDropColumn = (dropColumn) => {
+            console.log("The drop column returned to main state from DropArea component is ", dropColumn);
+
+            
+            //the drop column determines the MOVE
+
+
+            //if the column array is already 6 in length - do nothing!
+            //
+            const columnArray = this._returnColumnArray(dropColumn);
+
+            if ((columnArray.length < 6) && (this.state.winner === null)) {
+                const squarePosition = (replaceColNumberWithLetter(dropColumn)) + columnArray.length;
+                // console.log(`the new square position is ${squarePosition}`);
+                const columnToUpdate = "column" +  replaceColNumberWithLetter(dropColumn);
+                // console.log("columntoupdate is", columnToUpdate);
+                const playerValue = this.state.isPlayerOneTurn ? 'X' : 'O';
+                
+                //we also need to check for a win...
+                //need to grab a tempBoard, update the appropriate cell (squarePosition) and then run the check.
+                const tempBoard = {...this.state.board}  //a true shallow copy
+                    tempBoard[squarePosition] = playerValue
+ 
+    
+
             //this sorts all the pieces into arrays that can possibly have a win,
             //then each array is analyzed with a function
             //6 rows, top to bottom
@@ -157,37 +190,61 @@ export default class Connect4Houses extends Component {
             if ((this.state.turnCounter === 41) && (winner === null)) {
                 winner = "NO WINNER";
             }
+    
 
-            this.setState({
-                board: tempBoard,
-                turnCounter: this.state.turnCounter + 1,
-                isPlayerOneTurn: !this.state.isPlayerOneTurn,
-                winner: winner,
+
+                //this is a valid move...update arrays, refresh board, and switch players
+                this.setState({
+                    colToAdd:dropColumn,
+                    board:{
+                        ...this.state.board,
+                        [squarePosition]:playerValue,
+                    },
+                    [columnToUpdate]:columnArray.concat(playerValue),
+                    turnCounter: this.state.turnCounter + 1,
+                    isPlayerOneTurn: !this.state.isPlayerOneTurn,
+                    winner: winner,
+
+
+
                 })
-                
-        }
-
             }
-        _newGame = () => {
-            //not changing player names
-            this.setState({
-                isPlayerOneTurn: true,  //should always start with true...so figures face correct direction
-                board: blankBoard,
-                turnCounter: 0,
-                winner: null,  
-            })
+            //else DO NOTHING...NO CHANGE PLAYER, WAIT FOR ANOTHER CLICK
         }
 
-    
-        _getDropColumn = (dropColumn) => {
-            console.log("The drop column returned to main state from DropArea component is ", dropColumn);
+        _returnColumnArray = (colNumber) => {
+            if (colNumber === 1) {
+                return [...this.state.columnA]
+            }
+            else if (colNumber === 2) {
+                return [...this.state.columnB]
+            }
+            else if (colNumber === 3) {
+                return [...this.state.columnC]
+            }
+            else if (colNumber === 4) {
+                return [...this.state.columnD]
+            }
+            else if (colNumber === 5) {
+                return [...this.state.columnE]
+            }
+            else if (colNumber === 6) {
+                return [...this.state.columnF]
+            }
+            //assuming 7
+            else   {
+                return [...this.state.columnG]
+            }
         }
-    
+        
 }
 
 
 
-//helper function
+//helper functions
+
+//check length of appropriate array, return appropriate array
+
 //check connect4arrays for win:
 
 //LOGIC explanation
@@ -212,3 +269,16 @@ function checArrayForWinner(array) {
     return test;
     }
 
+//helper function
+function replaceColNumberWithLetter(number) {
+    var map = {
+        1 : 'A',
+        2 : 'B',
+        3 : 'C',
+        4 : 'D',
+        5 : 'E',
+        6 : 'F',
+        7 : 'G',
+    }
+    return map[number];
+    }

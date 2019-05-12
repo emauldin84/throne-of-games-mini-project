@@ -23,21 +23,15 @@ const cellNames =
         <div className="masterGrid">
         
             <DropArea getDropColumnFun={getDropColumnFun} />
-            
+
+            <div className="boardcontainer">
+                
                 
                     <div className='connect4housesBoard'>
-                    {/* backgroundImage='./imgs/rockwall.png' > */}
-                
+                       
                     {cellNames.map((square,i) => (
                         <div className='connect4housesSquare' 
-                            key={i}
-                            onClick={()  => {
-                                if (board[square] === null) {          
-                                clickHandler(square)
-                                // getDropColumnFun("55")
-                                }
-                            }}>
-                            {/* {square} */}
+                            key={i}>
                         <img 
                             className={board[square] === 'O' ? "flipped" : ""}
                             src={board[square] ? ( board[square] === 'X' ? player1png : player2png) : blank} 
@@ -45,9 +39,11 @@ const cellNames =
                         </div>
 
                     ))}
-                    
-                    </div>
-
+                        </div>
+                <div className="overlaydiv">
+                <img src="../imgs/rockwall.png" />
+                </div>
+            </div>
         </div>
     )
 }
