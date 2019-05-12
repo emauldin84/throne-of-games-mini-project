@@ -39,13 +39,12 @@ body {
 
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
-
 .masterGrid {
   /* this should be a percentage of the screen width */
-  width:70vh;    
+  width:80vh;    
   margin: auto;
   display:grid;
-  grid-template-rows: 10% 100%;
+  grid-template-rows: 10fr 90fr ;
 
 }
 .dropArea {
@@ -204,7 +203,8 @@ h3 {
 	left: 0;
 	right: 0;
 
-	margin: auto;
+  margin: auto;
+  z-index:40;
 }
 
 .pulse {

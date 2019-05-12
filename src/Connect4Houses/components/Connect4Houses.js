@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Board from './Board'
+import Results from './Results' ;
+
+
 // import Result from './Result';
 // import characters from './characters.js'
 // import PlayerOne from './PlayerOne'
@@ -47,9 +50,10 @@ export default class Connect4Houses extends Component {
         }
     }
 
-    render() {
+    render() {    
         return (
-        <div>
+        <div className="connect4HousesMain">
+            <link rel="StyleSheet" type="text/css" href="../styles/connect4Houses.css" />
             <h1>Connect 4 Houses</h1>
             <div className='connect-4-houses-container'>
                 {/* <PlayerOne characters={characters} 
@@ -71,8 +75,9 @@ export default class Connect4Houses extends Component {
                 {/* Result to display start button or display who won  with a play again at end of game */}
 
             </div>
-                {/* <Result winner={this.state.winner} clickHandler={this._newGame}/>  */}
-        
+                <Results
+                    winner={this.state.winner} 
+                    clickHandler={this._newGame}/> 
         </div>
         )
     }
@@ -188,7 +193,7 @@ export default class Connect4Houses extends Component {
             }
             //if we are at the 42nd turn, and there are no winners, then, no-winners
             if ((this.state.turnCounter === 41) && (winner === null)) {
-                winner = "NO WINNER";
+                winner = "Draw";
             }
     
 

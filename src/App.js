@@ -3,6 +3,7 @@ import './App.css';
 
 
 
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Dashboard from './ThroneOfGames/components/Dashboard'
 import TicTacTyrion from './TicTacTyrion/components/TicTacTyrion'
@@ -18,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={ Dashboard } />
           <Route path ='/tic-tac-tyrion' component={ TicTacTyrion } />
-          <Route path ='/connect-four-houses' component={Connect4Houses} />
+          <Route path ='/connect-four-houses' component={Connect4Houses}  />
         </Switch>
       </div>
     </Router>
