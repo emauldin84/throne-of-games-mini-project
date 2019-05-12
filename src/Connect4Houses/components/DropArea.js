@@ -21,7 +21,7 @@ export default class DropArea extends Component {
             ref={this.dropAreaRef}
 
                 onMouseMove={(e) => {
-                    console.log("on mouse over: ", e.clientX);
+                    // console.log("on mouse over: ", e.clientX);
                     // console.log("my new ref width", this.dropAreaRef.current.offsetWidth)
                     // console.log("better left is ", this.dropAreaRef.current.offsetLeft)
                     // let coinStyle ={left:this.state.xpos}

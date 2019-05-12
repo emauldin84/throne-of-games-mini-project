@@ -3,7 +3,7 @@ import DropArea from './DropArea';
 
 export default function Board({board, clickHandler, playerOneName, playerTwoName, getDropColumnFun, playerOne}) {
 
-    console.log("this shoudl bve ture or false for player one", playerOne)
+    // console.log("this shoudl bve ture or false for player one", playerOne)
     const player1png = "./imgs/fire-circle.gif" ;
     // const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
     const player2png = "./imgs/ice.gif";
@@ -42,7 +42,7 @@ const cellNames =
                     ))}
                         </div>
                 <div className="overlaydiv">
-                <img src="../imgs/rockwall.png" />
+                <img src="../imgs/rockwall.png" alt="rock wall overlay for connect 4" />
                 </div>
             </div>
         </div>
