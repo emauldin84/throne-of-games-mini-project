@@ -33,10 +33,13 @@ export default class DropArea extends Component {
                     //so, i will prevcent that
 
                     if ((e.clientX - (this.dropAreaRef.current.offsetLeft + this.dropAreaRef.current.offsetWidth )) <= 0) {
-
+                        let leftPos = Math.min((e.clientX - this.dropAreaRef.current.offsetLeft),
+                                (this.dropAreaRef.current.offsetWidth-this.dropAreaRef.current.offsetHeight))
+                                // console.log(leftPos);
                         this.setState({
                             // style:{left: e.clientX - e.nativeEvent.srcElement.offsetLeft}
-                            style:{left: e.clientX - this.dropAreaRef.current.offsetLeft}
+                            // style:{left: e.clientX - this.dropAreaRef.current.offsetLeft}
+                            style:{left: leftPos}
                         })
 
                     }
