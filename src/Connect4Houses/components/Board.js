@@ -1,8 +1,9 @@
 import React from 'react'
 import DropArea from './DropArea';
 
-export default function Board({board, clickHandler, playerOneName, playerTwoName, getDropColumnFun}) {
+export default function Board({board, clickHandler, playerOneName, playerTwoName, getDropColumnFun, playerOne}) {
 
+    console.log("this shoudl bve ture or false for player one", playerOne)
     const player1png = "./imgs/fire-circle.gif" ;
     // const player1png = `./imgs/${replaceSpaceWithHyphen(playerOneName)}.png`
     const player2png = "./imgs/ice.gif";
@@ -22,7 +23,7 @@ const cellNames =
 
         <div className="masterGrid">
         
-            <DropArea getDropColumnFun={getDropColumnFun} />
+            <DropArea getDropColumnFun={getDropColumnFun} player={playerOne}/>
 
             <div className="boardcontainer">
                 

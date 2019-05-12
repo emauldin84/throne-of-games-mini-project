@@ -1,7 +1,16 @@
+@font-face {
+  font-family: GOTFFT;
+  src: url('./fonts/Game-of-Thrones.ttf');
+}
+
 body {
   background: url('./weirwood-tree.jpeg') no-repeat;
   background-attachment: fixed;
   background-position: center;
+  font-family: GOTFFT;
+}
+H1 {
+  font-family: GOTFFF;
 }
 .App {
   text-align: center;
@@ -54,9 +63,9 @@ body {
   position: relative;
 }
 .coinToDrop {
-  height:30px;
+  /* height:90%; */
   width:30px;
-  background-color:purple;
+  /* background-color:purple; */
   position: absolute;
   top:0;
 }
