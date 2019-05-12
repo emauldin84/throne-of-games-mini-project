@@ -4,10 +4,12 @@
 }
 
 body {
-  background: url('./weirwood-tree.jpeg') no-repeat;
+  background: url('./imgs/Game-of-Thrones-Iron-throne-640x447.jpg') no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
   font-family: GOTFFT;
+  color: white;
 }
 h1 {
   font-family: GOTFFT;
@@ -35,6 +37,37 @@ h1 {
 
 .App-link {
   color: #61dafb;
+}
+
+.title7 {
+  background-color: rgba(0,0,0,.7);
+  height: 100%;
+  margin-top: 0;
+  padding: 15px;
+
+}
+
+.game-selector-div {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+}
+
+.game-links {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  
+}
+
+.game-links:hover {
+  background-color: rgba(0,0,0,.7);
+  vertical-align: middle;
 }
 
 
@@ -100,15 +133,15 @@ h1 {
   display: grid;
   /* there are 7 colums, 6 rows */
   grid-template-columns: repeat(7, 14.2857%);
- 
- }
- div .connect4housesSquare {
+
+}
+div .connect4housesSquare {
   /* border: 2px blue solid;  */
   width:100%;
   max-height:100%;
 }
 
- .connect4housesSquare img {
+.connect4housesSquare img {
   width:100%;
   /* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
   display:block;   
@@ -116,14 +149,15 @@ h1 {
 
 /**************TIC TAC TYRION CSS *************************************************************/
 
-
 a {
   text-decoration: none;
-  color: black;
+  color: white;
+  vertical-align: middle;
 }
 
 
 .tic-tac-tyrion-container {
+  height: 100%;
   display: flex;
   align-items: top;
   justify-content:space-evenly;
@@ -202,10 +236,11 @@ h3 {
 
 .result {
   color: white;
-  width: 50%;
+  width: 35%;
 	height: 45px;
   background-color: rgba(0,0,0,.7);
   padding: 10px;
+  padding-top: 20px;
 	
 	position: absolute;
 	top:0;
@@ -215,6 +250,7 @@ h3 {
 
   margin: auto;
   z-index:40;
+  
 }
 
 .pulse {
