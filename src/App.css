@@ -65,8 +65,8 @@ h1 {
   cursor: default;
 }
 .coinToDrop {
-  /* height:90%; */
-  width:30px;
+  height:90%;
+  /* width:30px; */
   /* background-color:purple; */
   position: absolute;
   top:0;

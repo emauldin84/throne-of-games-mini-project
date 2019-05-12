@@ -104,6 +104,14 @@ export default class Connect4Houses extends Component {
                 board: blankBoard,
                 turnCounter: 0,
                 winner: null,  
+                columnA:[],
+                columnB:[],
+                columnC:[],
+                columnD:[],
+                columnE:[],
+                columnF:[],
+                columnG:[],
+    
             })
         }
 
