@@ -81,39 +81,18 @@ body {
   display: grid;
   /* there are 7 colums, 6 rows */
   grid-template-columns: repeat(7, 14.2857%);
-  /* background-image: url('./imgs/rockwall.png'); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* position: relative; */
-  /* position: absolute;
-  top:0;
-  left:0; */
-
-  /* uncomment this once we get the drop working... */
-  /* this will pull the image on top...but when we do that, the cells are no longer clickable */
-
-  /* z-index: 5200; */
  
  }
-/* RIGHT NOW NOT BEING USED....
-   AND IMAGE TAG IS BEING USING INSTEAD */
-
-
- 
  div .connect4housesSquare {
   /* border: 2px blue solid;  */
   width:100%;
   max-height:100%;
-  /* position: relative;
-  z-index: 1; */
 }
 
  .connect4housesSquare img {
   width:100%;
   /* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
   display:block;   
-  /* position: relative;
-  z-index:1; */
 }
 
 /**************TIC TAC TYRION CSS *************************************************************/
