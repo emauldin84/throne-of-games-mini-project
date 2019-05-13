@@ -95,9 +95,6 @@ export default class Connect4Houses extends Component {
 
 					<Board
 						board={this.state.board}
-						clickHandler={this._setCell}
-						playerOneName={this.state.playerOneName}
-						playerTwoName={this.state.playerTwoName}
 						getDropColumnFun={this._getDropColumn}
 						playerOne={this.state.isPlayerOneTurn}
 					/>

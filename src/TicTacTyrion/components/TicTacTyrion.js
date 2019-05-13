@@ -4,7 +4,6 @@ import Result from "./Result";
 import characters from "./characters.js";
 import PlayerOne from "./PlayerOne";
 import PlayerTwo from "./PlayerTwo";
-import Dropdown from "../../ThroneOfGames/components/Dropdown";
 
 export default class TicTacTyrion extends Component {
 	constructor(props) {

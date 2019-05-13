@@ -117,7 +117,7 @@ h2 {
 	width: 80vh;
 	margin: auto;
 	display: grid;
-	grid-template-rows: 10fr 90fr;
+	/* grid-template-rows: 10fr 90fr; */
 }
 .dropArea {
 	/* height: 20px; */
