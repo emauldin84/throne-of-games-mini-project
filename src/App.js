@@ -8,6 +8,7 @@ import Connect4Houses from "./Connect4Houses/components/Connect4Houses";
 import CerseiSays from "./CerseiSays/CerciSays";
 
 function App() {
+
 	return (
 		<Router>
 			<div className="App">
@@ -31,6 +32,7 @@ function App() {
 			</div>
 		</Router>
 	);
+
 }
 
 export default App;
