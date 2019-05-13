@@ -81,32 +81,30 @@ export default class Connect4Houses extends Component {
 	render() {
 		return (
 
+
 			<div className="connect4Flex">  
 
 				
 
 
-				<div className="connect4HousesMain">
-					<link
-						rel="StyleSheet"
-						type="text/css"
-						href="../styles/connect4Houses.css"
-					/>
-					<h1>Connect 4 Houses</h1>
-					<div className="connect-4-houses-container">
-						{/* <PlayerOne characters={characters} 
-				playerOne={this.state.playerOneName} 
-				playerTwo={this.state.playerTwoName} s
-				etPlayer={this._setPlayerOneName}/> */}
+						<div className="connect4HousesMain">
+				<link
+					rel="StyleSheet"
+					type="text/css"
+					href="../styles/connect4Houses.css"
+				/>
+				<h1>Connect 4 Houses</h1>
+				<div className="connect-4-houses-container">
+					{/* <PlayerOne characters={characters} 
+            playerOne={this.state.playerOneName} 
+            playerTwo={this.state.playerTwoName} s
+            etPlayer={this._setPlayerOneName}/> */}
 
-						<Board
-							board={this.state.board}
-							clickHandler={this._setCell}
-							playerOneName={this.state.playerOneName}
-							playerTwoName={this.state.playerTwoName}
-							getDropColumnFun={this._getDropColumn}
-							playerOne={this.state.isPlayerOneTurn}
-						/>
+					<Board
+						board={this.state.board}
+						getDropColumnFun={this._getDropColumn}
+						playerOne={this.state.isPlayerOneTurn}
+					/>
 
 						{/* <PlayerTwo characters={characters} 
 						playerOne={this.state.playerOneName} 

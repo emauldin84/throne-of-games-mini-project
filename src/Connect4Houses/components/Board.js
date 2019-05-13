@@ -3,9 +3,6 @@ import DropArea from "./DropArea";
 
 export default function Board({
 	board,
-	clickHandler,
-	playerOneName,
-	playerTwoName,
 	getDropColumnFun,
 	playerOne
 }) {
