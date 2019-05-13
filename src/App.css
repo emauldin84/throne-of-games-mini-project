@@ -10,6 +10,7 @@ body {
 	background-size: cover;
 	font-family: GOTFFT;
 	color: white;
+	background-color: black;
 }
 h1 {
 	font-family: GOTFFT;
@@ -70,6 +71,9 @@ h2 {
 	margin: 0;
 }
 .dropdown:hover .dropdown-content {
+	display: block;
+}
+.dropdown:focus .dropdown-content {
 	display: block;
 }
 
