@@ -42,7 +42,8 @@ const cellNames =
                     ))}
                         </div>
                 <div className="overlaydiv">
-                <img src="../imgs/rockwall.png" alt="rock wall overlay for connect 4" />
+                {/* <img src="../imgs/rockwall.png" alt="rock wall overlay for connect 4" /> */}
+                <img src="../imgs/darkwall.png" alt="rock wall overlay for connect 4" />
                 </div>
             </div>
         </div>
