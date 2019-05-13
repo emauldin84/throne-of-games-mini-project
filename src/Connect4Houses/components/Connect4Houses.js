@@ -107,6 +107,7 @@ export default class Connect4Houses extends Component {
                     playerTwo={this.state.playerTwoName} 
                     setPlayer={this._setPlayerTwoName}/> */}
 
+
 					{/* Result to display start button or display who won  with a play again at end of game */}
 				</div>
 				<Results

@@ -172,6 +172,7 @@ h2 {
 	display: grid;
 	/* there are 7 colums, 6 rows */
 	grid-template-columns: repeat(7, 14.2857%);
+	grid-auto-flow: row dense;
 }
 div .connect4housesSquare {
 	/* border: 2px blue solid;  */
@@ -276,7 +277,7 @@ h3 {
 
 .result {
 	color: white;
-	width: 35%;
+	width: auto;
 	height: 45px;
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 10px;
