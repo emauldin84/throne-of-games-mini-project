@@ -75,10 +75,10 @@ export default class Connect4Houses extends Component {
 
                 {/* Result to display start button or display who won  with a play again at end of game */}
 
-            </div>
                 <Results
                     winner={this.state.winner} 
                     clickHandler={this._newGame}/> 
+            </div>
         </div>
         )
     }
