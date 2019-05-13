@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer, turn}) {
     const characterList = characters.filter(character => (
-        character !== playerOne
+        character[0] !== playerOne
     ))
     characterList.sort()
     return (
@@ -17,8 +17,8 @@ export default function PlayerTwo({ characters, playerOne, playerTwo, setPlayer,
                 // selected={playerTwo === "Player Two"} 
                 value="Player Two">Select Character
             </option>
-                {characterList.map((character,i) => (
-                    <option key={i} value={character}>{character}</option>
+                {characterList.map((character) => (
+                    <option key={character[1]} value={character[0]}>{character[0]}</option>
                 ))}
             </select>
             
