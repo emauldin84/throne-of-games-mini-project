@@ -112,13 +112,20 @@ h2 {
 }
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
+.connect4Flex {
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+}
 .masterGrid {
 	/* this should be a percentage of the screen width */
-	width: 80vh;
+	/* width: 80vh; */
 	margin: auto;
 	display: grid;
-	grid-template-rows: 10fr 90fr;
+	/* grid-template-rows: 10fr 90fr; */
 }
+
+
 .dropArea {
 	/* height: 20px; */
 	/* border:2px green solid; */
@@ -330,3 +337,38 @@ h3 {
 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 	}
 }
+
+/**************MEDIA QUERIES ************************************************************/
+
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+	.masterGrid {
+	width:73vh;
+   }
+}
+ /* Portrait styles */
+ @media screen and (orientation:portrait) {
+	.masterGrid {
+	  width:80vw;
+	}
+	.tic-tac-tyrion-container {
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+	} 
+	.ticTacToeBoard {
+		width:60%;
+		margin-top:10px;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+	/* For mobile phones: */
+	h2 {
+		font-size:90%;
+		} 
+  }
+
+
