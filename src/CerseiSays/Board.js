@@ -5,8 +5,8 @@ export default function Board({ board }) {
 		<div className="cerci-says-body">
 			{board.map(eaArray => (
 				<div className="row">
-					<div className={`cube${eaArray[0].cube}`}>
-					<div className={`cube${eaArray[1].cube}`}>
+					<div className={`cube${eaArray[0].cube}`} />
+					<div className={`cube${eaArray[1].cube}`} />
 				</div>
 			))}
 		</div>
