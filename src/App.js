@@ -16,7 +16,7 @@ function App() {
 					<div className="nav-bar">
 						<Dropdown />
 						<h2 className="title7">
-							Throne of Games! &nbsp;&nbsp;&nbsp;&nbsp;{" "}
+							Throne of Games! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</h2>
 					</div>
 				</Link>
