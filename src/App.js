@@ -12,14 +12,14 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Link to="/">
-					<div className="nav-bar">
-						<Dropdown />
-						<h2 className="title7">
-							Throne of Games! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</h2>
-					</div>
-				</Link>
+				<div className="nav-bar">
+					<Dropdown />
+					<Link to="/">
+							<h2 className="title7">
+								Throne of Games! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</h2>
+					</Link>
+				</div>
 
 				<Switch>
 					<Route exact path="/" component={Dashboard} />
