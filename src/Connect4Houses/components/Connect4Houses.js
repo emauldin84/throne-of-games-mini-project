@@ -80,7 +80,14 @@ export default class Connect4Houses extends Component {
 
 	render() {
 		return (
-			<div className="connect4HousesMain">
+
+
+			<div className="connect4Flex">  
+
+				
+
+
+						<div className="connect4HousesMain">
 				<link
 					rel="StyleSheet"
 					type="text/css"
@@ -99,19 +106,26 @@ export default class Connect4Houses extends Component {
 						playerOne={this.state.isPlayerOneTurn}
 					/>
 
-					{/* <PlayerTwo characters={characters} 
-                    playerOne={this.state.playerOneName} 
-                    playerTwo={this.state.playerTwoName} 
-                    setPlayer={this._setPlayerTwoName}/> */}
+						{/* <PlayerTwo characters={characters} 
+						playerOne={this.state.playerOneName} 
+						playerTwo={this.state.playerTwoName} 
+						setPlayer={this._setPlayerTwoName}/> */}
 
 
-					{/* Result to display start button or display who won  with a play again at end of game */}
+						{/* Result to display start button or display who won  with a play again at end of game */}
+					</div>
+				
+					
 				</div>
+
+				<div>
 				<Results
-					winner={this.state.winner}
-					clickHandler={this._newGame}
-				/>
-			</div>
+						winner={this.state.winner}
+						clickHandler={this._newGame}
+					/>
+				</div>
+
+				</div>
 		);
 	}
 
