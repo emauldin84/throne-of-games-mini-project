@@ -372,7 +372,10 @@ h3 {
 	/* For mobile phones: */
 	h2 {
 		font-size:90%;
-		} 
+		}
+	h1 {
+		font-size:20px;
+	}
   }
 
 
