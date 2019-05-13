@@ -1,108 +1,129 @@
 @font-face {
-  font-family: GOTFFT;
-  src: url('./fonts/Game-of-Thrones.ttf');
+	font-family: GOTFFT;
+	src: url("./fonts/Game-of-Thrones.ttf");
 }
 
 body {
-  background: url('./imgs/Game-of-Thrones-Iron-throne-640x447.jpg') no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  font-family: GOTFFT;
-  color: white;
+	background: url("./imgs/Game-of-Thrones-Iron-throne-640x447.jpg") no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	font-family: GOTFFT;
+	color: white;
 }
 h1 {
-  font-family: GOTFFT;
+	font-family: GOTFFT;
 }
 .App {
-  text-align: center;
-
+	text-align: center;
 }
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+	animation: App-logo-spin infinite 20s linear;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+.dropdown-content .item {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.dropdown:hover .dropdown-content,
+.nav-bar:hover .dropdown-content {
+	display: block;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
+}
+.nav-bar {
+	position: relative;
 }
 
 .title7 {
-  background-color: rgba(0,0,0,.7);
-  height: 100%;
-  margin-top: 0;
-  padding: 15px;
-
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	margin-top: 0;
+	padding: 15px 15px 15px 0;
 }
 
 .game-selector-div {
-  position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: auto;
+	height: auto;
 }
 
 .game-links {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  font-size: 20px;
-  
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	font-size: 20px;
 }
 
 .game-links:hover {
-  background-color: rgba(0,0,0,.7);
-  vertical-align: middle;
+	background-color: rgba(0, 0, 0, 0.7);
+	vertical-align: middle;
 }
-
-
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
 .masterGrid {
-  /* this should be a percentage of the screen width */
-  width:80vh;    
-  margin: auto;
-  display:grid;
-  grid-template-rows: 10fr 90fr ;
-
+	/* this should be a percentage of the screen width */
+	width: 80vh;
+	margin: auto;
+	display: grid;
+	grid-template-rows: 10fr 90fr;
 }
 .dropArea {
-  /* height: 20px; */
-  /* border:2px green solid; */
-  width:100%;
-  position: relative;
-  background-color: rgba(0,0,0,.7);
-  z-index: 4;
-  
+	/* height: 20px; */
+	/* border:2px green solid; */
+	width: 100%;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 4;
 }
-.dropArea P {
-  color:rgba(255,255,255,.6);
-  /* position: absolute;
+.dropArea p {
+	color: rgba(255, 255, 255, 0.6);
+	/* position: absolute;
   top:0; */
-  /* z-index: 1; */
-  cursor: default;
+	/* z-index: 1; */
+	cursor: default;
 }
 .coinToDrop {
-  height:90%;
-  /* width:30px; */
-  /* background-color:purple; */
-  position: absolute;
-  top:0;
+	height: 90%;
+	/* width:30px; */
+	/* background-color:purple; */
+	position: absolute;
+	top: 0;
 }
 /* .dropAreaText {
   width:100%;
@@ -113,180 +134,173 @@ h1 {
   text-align: center;
 } */
 .boardcontainer {
-  position: relative;
-  width:100%;
+	position: relative;
+	width: 100%;
 }
 
-.overlaydiv img{
-
-  z-index: 25;
-  width:100%;
-  position: absolute;
-  top:0;
-  left:0;
+.overlaydiv img {
+	z-index: 25;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-
 
 .connect4housesBoard {
-  /* border:5px solid black; */
-  width:100%;
-  display: grid;
-  /* there are 7 colums, 6 rows */
-  grid-template-columns: repeat(7, 14.2857%);
-
+	/* border:5px solid black; */
+	width: 100%;
+	display: grid;
+	/* there are 7 colums, 6 rows */
+	grid-template-columns: repeat(7, 14.2857%);
 }
 div .connect4housesSquare {
-  /* border: 2px blue solid;  */
-  width:100%;
-  max-height:100%;
+	/* border: 2px blue solid;  */
+	width: 100%;
+	max-height: 100%;
 }
 
 .connect4housesSquare img {
-  width:100%;
-  /* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
-  display:block;   
+	width: 100%;
+	/* otherwise the default it inline...and img inline has a 3px's like text would between the rows...*/
+	display: block;
 }
 
 /**************TIC TAC TYRION CSS *************************************************************/
 
 a {
-  text-decoration: none;
-  color: white;
-  vertical-align: middle;
+	text-decoration: none;
+	color: white;
+	vertical-align: middle;
 }
-
 
 .tic-tac-tyrion-container {
-  height: 100%;
-  display: flex;
-  align-items: top;
-  justify-content:space-evenly;
-  /* align-items: center; */
-
+	height: 100%;
+	display: flex;
+	align-items: top;
+	justify-content: space-evenly;
+	/* align-items: center; */
 }
-.ticTacToeBoard  {
-  /* border: 5px solid black; */
-  width:35%;
-  /* height:500px; */
-  /* display: inline-grid; */
-  display:grid;
-  /* justify-items: center; */
-  /* margin:auto; */
-  grid-template-columns: repeat(3, 33.33%);
-  /* grid-auto-rows: 1fr; */
-  grid-column-gap: none;
-
+.ticTacToeBoard {
+	/* border: 5px solid black; */
+	width: 35%;
+	/* height:500px; */
+	/* display: inline-grid; */
+	display: grid;
+	/* justify-items: center; */
+	/* margin:auto; */
+	grid-template-columns: repeat(3, 33.33%);
+	/* grid-auto-rows: 1fr; */
+	grid-column-gap: none;
 }
 
 /* we may change this so the size is flexible... which would mean the div for the board has to be 
 forced to a square size.... */
 .ticTacToeSquare {
-  /* width:100%;
+	/* width:100%;
   height:8rem;
   padding-top:10%;   */
-  /* forces square shape */
-  /* padding-bottom:10%; */
-  /* margin: 0 auto; */
-  /* font-size:10vw; */
-  border:2px black solid;
-  background-color: rgba(0,0,0,.2);
+	/* forces square shape */
+	/* padding-bottom:10%; */
+	/* margin: 0 auto; */
+	/* font-size:10vw; */
+	border: 2px black solid;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .ticTacToeSquare img {
-  width:100%;
+	width: 100%;
 }
 
 .flipped {
-  transform: scaleX(-1);
+	transform: scaleX(-1);
 }
 button {
-  padding: 10px;
-  font-size: 20px;
-  /* margin: 20px; */
-  color: white;
-  background: rgba(0,0,0,.7);
-  cursor: pointer;
+	padding: 10px;
+	font-size: 20px;
+	/* margin: 20px; */
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
 }
 .playerTurn {
-  color: white;
-  background-color: rgba(0,0,0,.7);
-  text-align:center;
-  padding: 5px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	padding: 5px;
 }
 .player-div {
-  width: 171.29px;
+	width: 171.29px;
 }
 h3 {
-  font-weight: normal;
-  margin: 18.72px 0;
-  padding: 5px;
-  color: white;
+	font-weight: normal;
+	margin: 18.72px 0;
+	padding: 5px;
+	color: white;
 }
 .custom-select {
-  color: white;
-  background-color: rgba(0,0,0,.7);
-  position: relative;
-  cursor: pointer;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: relative;
+	cursor: pointer;
 }
 
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+.select-items div:hover,
+.same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .result {
-  color: white;
-  width: 35%;
+	color: white;
+	width: 35%;
 	height: 45px;
-  background-color: rgba(0,0,0,.7);
-  padding: 10px;
-  padding-top: 20px;
-	
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+	padding-top: 20px;
+
 	position: absolute;
-	top:0;
+	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 
-  margin: auto;
-  z-index:40;
-  
+	margin: auto;
+	z-index: 40;
 }
 
 .pulse {
-  color: white;
-  background: rgba(0,0,0,.7);
-  cursor: pointer;
-  box-shadow: 0 0 0 rgba(0,0,0,.7);
-  animation: pulse 1.5s infinite;
-  margin: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0.7);
+	animation: pulse 1.5s infinite;
+	margin: 20px;
 }
 .pulse:hover {
-  animation: none;
+	animation: none;
 }
 
 @-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
-  }
-  70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
-  }
-  100% {
-      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
-  }
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
 }
 @keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
-    box-shadow: 0 0 0 0 rgba(255,255,255,.7);;
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
-      box-shadow: 0 0 0 10px rgba(255,255,255,.0);;
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
-      box-shadow: 0 0 0 0 rgba(255,255,255,.0);;
-  }
+	0% {
+		-moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
 }
