@@ -71,8 +71,8 @@ export default function Board({
 									key={i}
 									src={
 										board[square] === "X"
-											? player1png
-											: player2png
+											? `${player1png}?${square}`
+											: `${player2png}?${square}`
 									}
 									alt="fireOrIceGif"
 								/>

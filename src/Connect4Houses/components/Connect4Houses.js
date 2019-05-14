@@ -36,7 +36,6 @@ const blankBoard = {
 	B5: null,
 	C5: null,
 	D5: null,
-
 	E0: null,
 	F0: null,
 	G0: null,
@@ -95,30 +94,19 @@ export default class Connect4Houses extends Component {
 				/>
 				<h1>Connect 4 Houses</h1>
 				<div className="connect-4-houses-container">
-					{/* <PlayerOne characters={characters} 
-            playerOne={this.state.playerOneName} 
-            playerTwo={this.state.playerTwoName} s
-            etPlayer={this._setPlayerOneName}/> */}
-
 					<Board
 						board={this.state.board}
 						getDropColumnFun={this._getDropColumn}
 						playerOne={this.state.isPlayerOneTurn}
 					/>
-
-						{/* <PlayerTwo characters={characters} 
-						playerOne={this.state.playerOneName} 
-						playerTwo={this.state.playerTwoName} 
-						setPlayer={this._setPlayerTwoName}/> */}
-
-
-						{/* Result to display start button or display who won  with a play again at end of game */}
 					</div>
 				
 					
 				</div>
 
 				<div>
+	{/* Result to display start button or display who won  with a play again at end of game */}
+
 				<Results
 						winner={this.state.winner}
 						clickHandler={this._newGame}
