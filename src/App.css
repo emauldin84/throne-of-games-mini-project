@@ -140,6 +140,9 @@ h2 {
 	margin: auto;
 	display: grid;
 	/* grid-template-rows: 10fr 90fr; */
+	border:4vh solid  rgb(74, 61, 54,.6);
+	background-color: rgb(74, 61, 54,.6);
+
 }
 
 
