@@ -10,25 +10,25 @@ export class CerseiSays extends Component {
 					cube: "1",
 					image:'./imgs/top-left-stark.png',
 					audio: new Audio('./audio/wind.mp3'),
-					className:''
+					className:'',
 				}, { 
 					cube: "2",
 					image:'./imgs/top-right-lannister.png',
 					audio: new Audio('./audio/crowd.mp3'),
-					className:''
+					className:'',
 
 				},
 				{ 
 					cube: "3",
 					image:'./imgs/bottom-left-baratheon.png',
 					audio: new Audio('./audio/sword.mp3'),
-					className:''
+					className:'',
 
 				}, { 
 					cube: "4",
 					image:'./imgs/bottom-right-targaryen.png',
 					audio: new Audio('./audio/fire.mp3'),
-					className:''
+					className:'',
 				}
 			],
 
