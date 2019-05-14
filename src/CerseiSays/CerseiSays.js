@@ -15,6 +15,14 @@ export class CerseiSays extends Component {
 	render() {
 		return (
 			<div>
+
+				<link
+					rel="StyleSheet"
+					type="text/css"
+					href="../styles/cersei-says.css"
+				/>
+
+
 				<Board board={this.state.board} />
 			</div>
 		);
