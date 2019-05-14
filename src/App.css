@@ -198,6 +198,37 @@ div .connect4housesSquare {
 	display: block;
 }
 
+/* **********************Cersei Says********************** */
+
+.cersei-says-board{
+  display:flex;
+  justify-content: center;
+}
+
+.cersei-says-body {
+  display:grid;
+  grid-template-columns: 50% 50%;
+  width:40vw;
+  grid-column-gap: none;
+  grid-row-gap: none;
+
+}
+
+.cube img{
+  width:100%;
+}
+
+.button-selector {
+  opacity:.5;
+}
+
+
+
+
+
+
+
+
 /**************TIC TAC TYRION CSS *************************************************************/
 
 a {
