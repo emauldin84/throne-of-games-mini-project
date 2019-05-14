@@ -16,7 +16,7 @@ function App() {
 					<Dropdown />
 					<Link to="/">
 							<h2 className="title7">
-								Throne of Games! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								Throne of Games!
 							</h2>
 					</Link>
 				</div>
