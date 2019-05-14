@@ -10,12 +10,13 @@ body {
 	background-size: cover;
 	font-family: GOTFFT;
 	color: white;
+	background-color: black;
 }
 h1 {
 	font-family: GOTFFT;
 }
 h2 {
-	margin-block-end: 0;
+	/* margin-block-end: 0; */
 }
 .App {
 	text-align: center;
@@ -39,25 +40,36 @@ h2 {
 .menu {
 	font-size: 16px;
 	vertical-align: middle;
-	margin-top: 20px;
-	margin-left: 10px;
+	height: 20px;
+	margin: 0;
+	position: fixed;
+	top: 20px;
+	/* width: 100px; */
+	/* padding-top: 5%; */
+	
+	/* transform: translateY(25%); */
+	z-index: 100;
+	
 }
 .dropdown {
 	float: left;
 	overflow: hidden;
+	vertical-align: middle;
 	/* background-color: rgba(0, 0, 0, 0.7); */
 	color: white;
+	
 }
 
 .dropdown-content {
 	display: none;
-	position: absolute;
+	position: fixed;
 	background-color: rgba(49, 50, 54);
 	color: white;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 10;
 	float: left;
+	top: 38px;
 }
 .dropdown-content .item {
 	float: none;
@@ -72,20 +84,24 @@ h2 {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+.dropdown:focus .dropdown-content {
+	display: block;
+}
 
 .App-link {
 	color: #61dafb;
 }
 .nav-bar {
 	position: relative;
-	vertical-align: middle;
-}
-
-.title7 {
 	background-color: rgba(0, 0, 0, 0.7);
 	height: 100%;
 	margin-top: 0;
-	padding: 15px 15px 15px 0;
+	padding: 15px;
+}
+
+.title7 {
+	position: relative;
+	margin: 0;
 }
 
 .game-selector-div {
@@ -110,6 +126,7 @@ h2 {
 	background-color: rgba(0, 0, 0, 0.7);
 	vertical-align: middle;
 }
+/**************CERSEI SAYS CSS *************************************************************/
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
 .connect4Flex {
@@ -395,11 +412,20 @@ h3 {
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 517px) {
 	/* For mobile phones: */
-	h2 {
+	h2, .menu{
 		font-size:90%;
-		} 
+		}
+	h1 {
+		font-size:20px;
+	}
+	.menu {
+		top: 15px;
+	}
+	.dropdown-content {
+		top: 30px;
+	}
   }
 
 
