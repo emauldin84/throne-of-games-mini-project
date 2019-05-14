@@ -1,0 +1,21 @@
+
+  html {
+    background: none !important;
+  }
+
+  body {
+    /* background-attachment: fixed;
+    background-position: center; */
+    background-color: #1b2408;
+    color: white;
+    background: url('../imgs/red-keep-background.jpg') no-repeat;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  
+    
+  }
+
+
+  
