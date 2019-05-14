@@ -214,7 +214,8 @@ div .connect4housesSquare {
 
 }
 
-.cube img{
+
+.cube {
   width:100%;
 }
 
@@ -223,7 +224,7 @@ div .connect4housesSquare {
   transform:scale(1.05)
 }
 
-.cube img:hover{
+.cube:hover{
   filter:brightness(130%);
   transform:scale(1.05)
 }
