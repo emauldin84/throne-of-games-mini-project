@@ -10,6 +10,7 @@ export default function Board({ board, clickHandler }) {
 							<img
 							src={eaObj.image}
 							className={`cube ${eaObj.className}`}
+							id={`cube${eaObj.cube}`}
 							onClick={()=>{
 								clickHandler(eaObj)
 							}}

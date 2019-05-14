@@ -228,8 +228,18 @@ div .connect4housesSquare {
   filter:brightness(130%);
   transform:scale(1.05)
 }
-
-
+#cube1{
+  border-radius: 100% 0 30% 0;
+}
+#cube2{
+  border-radius: 0 100% 0 30%;
+}
+#cube3{
+  border-radius: 0 30% 0 100%;
+}
+  #cube4{
+  border-radius: 30% 0 100% 0;
+  }
 
 
 
