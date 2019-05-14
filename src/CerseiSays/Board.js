@@ -1,14 +1,21 @@
 import React from "react";
 
-export default function Board({ board }) {
+export default function Board({ board, clickHandler }) {
 	return (
-		<div className="cerci-says-body">
-			{board.map(eaArray => (
-				<div className="row">
-					<div className={`cube${eaArray[0].cube}`} />
-					<div className={`cube${eaArray[1].cube}`} />
-				</div>
-			))}
+		<div className="cersei-says-board">
+			<div className="cersei-says-body">
+				{board.map(eaObj=> (
+						<div key={eaObj.cube} className={`cube ${eaObj.className}`}>
+							<img
+							src={eaObj.image}
+							onClick={()=>{
+								clickHandler(eaObj)
+							}}
+							/>
+							
+						</div>
+				))}
+			</div>
 		</div>
 	);
 }
