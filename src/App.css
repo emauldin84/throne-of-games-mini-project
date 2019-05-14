@@ -219,7 +219,13 @@ div .connect4housesSquare {
 }
 
 .button-selector {
-  opacity:.5;
+  filter:brightness(130%);
+  transform:scale(1.05)
+}
+
+.cube img:hover{
+  filter:brightness(130%);
+  transform:scale(1.05)
 }
 
 

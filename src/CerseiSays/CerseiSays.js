@@ -46,20 +46,28 @@ export class CerseiSays extends Component {
 		const tempBoard = this.state.board
 		this.setState({
 			userInput: [],
-		}, this._checkComputerTurn(tempRandomArray.concat({...tempBoard[randomCube]})))
+			randomSelection:tempRandomArray.concat({...tempBoard[randomCube]}),
+			isComputerTurn:true
+
+		}, ()=>{
+			this._checkComputerTurn()
+		}
+		)
 	}
 	componentDidUpdate(){
 		console.log("component did update")
 	}
 
-	_checkComputerTurn = (randomArray)=>{
+	_checkComputerTurn = ()=>{
+
 		console.log(this.state.isComputerTurn)
+
 		if (this.state.isComputerTurn){
 			// play array of sounds
-			let delay = 2000
+			let delay = 1300
 
-			console.log('random array',randomArray)
-			randomArray.map((eaObj, i) =>{ 
+			console.log('random array',this.state.randomSelection)
+			this.state.randomSelection.map((eaObj, i) =>{ 
 				
 				setTimeout(()=>{
 					let previousObj = this.state.randomSelection[i - 1]
@@ -88,28 +96,19 @@ export class CerseiSays extends Component {
 					updateState[chosenObjIndex].className = 'button-selector'
 					
 					
-					// this.setState({
-					// 	board:[
-					// 		...this.state.board,
-					// 		this.state.board[prevObjIndex].className = '',
-					// 		this.state.board[chosenObj].className = 'button-selector'
-					// 	]
-					// })
 					
 
 					if(i === this.state.randomSelection.length -1){
-						console.log("YES")
 
 						setTimeout(()=>{
 							updateState[chosenObjIndex].className = ''
 							this.setState({
-								randomSelection:randomArray,
 								isComputerTurn:false,
 								board:updateState})
 						}, delay)
 					}
 					this.setState({board:updateState})
-				}, delay * i)
+				}, (delay * (i + 1)))
 
 				
 				
@@ -123,35 +122,40 @@ export class CerseiSays extends Component {
 
 
 	_checkState = (eaObj)=>{
-		eaObj.audio.play()
-		let userInputArray = [...this.state.userInput, {...eaObj}]
-		
-		const {randomSelection, userInput} = this.state
-		let userLength = (userInputArray.length- 1)
-		let index = this.state.randomSelection.length - 1
+		const {isLoser, isWinner, isComputerTurn} = this.state
+		if(!isLoser && !isWinner && !isComputerTurn ){
 
-		console.log(userInputArray)
-		
-
-		if (randomSelection[userInputArray.length- 1].cube === userInputArray[userInputArray.length- 1].cube){
-
-			if(userInputArray.length - 1 === index){
-				if(userInputArray.length - 1 === 20){
-					this.setState({isWinner:true})
+			eaObj.audio.play()
+			let userInputArray = [...this.state.userInput, {...eaObj}]
+			
+			const {randomSelection, userInput} = this.state
+			let userLength = (userInputArray.length- 1)
+			let index = this.state.randomSelection.length - 1
+	
+			console.log(userInputArray)
+			
+	
+			if (randomSelection[userInputArray.length- 1].cube === userInputArray[userInputArray.length- 1].cube){
+	
+				if(userInputArray.length - 1 === index){
+					if(userInputArray.length - 1 === 20){
+						this.setState({isWinner:true})
+					}else{
+						this.setState({isComputerTurn:true},this._newRound())
+						
+					}
+	
 				}else{
-					this.setState({isComputerTurn:true},this._newRound())
-					
+					this.setState({userInput:userInputArray})
 				}
-
+	
 			}else{
-				this.setState({userInput:userInputArray})
+				// play shame
+				this.setState({isLoser:true})
 			}
+			
 
-		}else{
-			// play shame
-			this.setState({isLoser:true})
 		}
-		
 	}
 
 	_startNewGame = ()=>{
@@ -162,7 +166,13 @@ export class CerseiSays extends Component {
 			isComputerTurn:true,
 			isLoser:false,
 			isWinner:false
-		},this._checkComputerTurn([{...this.state.board[randomCube]}]))
+		},()=>{
+
+			this._checkComputerTurn()
+		
+		}
+			
+			)
 		
 	}
 
