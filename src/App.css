@@ -231,12 +231,19 @@ div .connect4housesSquare {
 
 }
 
-.cube img{
+
+.cube {
   width:100%;
 }
 
 .button-selector {
-  opacity:.5;
+  filter:brightness(130%);
+  transform:scale(1.05)
+}
+
+.cube:hover{
+  filter:brightness(130%);
+  transform:scale(1.05)
 }
 
 
