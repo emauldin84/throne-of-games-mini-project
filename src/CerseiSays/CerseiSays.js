@@ -29,7 +29,7 @@ export class CerseiSays extends Component {
 				}, { 
 					cube: "4",
 					image:'./imgs/bottom-right-targaryen.png',
-					audio: new Audio('./audio/fire.mp3'),
+					audio: new Audio('./audio/dragon.mp3'),
 					className:'',
 				}
 			],
@@ -56,69 +56,108 @@ export class CerseiSays extends Component {
 		}
 		)
 	}
-	componentDidUpdate(){
-		console.log("component did update")
-	}
 
 	_checkComputerTurn = ()=>{
 
-		console.log(this.state.isComputerTurn)
 
 		if (this.state.isComputerTurn){
 			// play array of sounds
-			let delay = 1300
+			this._playComputerSound(this.state.randomSelection, 0)
 
-			console.log('random array',this.state.randomSelection)
-			this.state.randomSelection.map((eaObj, i) =>{ 
+			// console.log('random array',this.state.randomSelection)
+			// this.state.randomSelection.map((eaObj, i) =>{ 
 				
-				setTimeout(()=>{
-					let previousObj = this.state.randomSelection[i - 1]
+			// 	setTimeout(()=>{
+			// 		let previousObj = this.state.randomSelection[i - 1]
 					
 				
-					let prevObjIndex = null
-					let chosenObjIndex = null
-					for(let i = 0; i < this.state.board.length; i++){
-						if(this.state.board[i].cube === eaObj.cube){
-							chosenObjIndex = i
-						}
-						if(previousObj){
-							if(this.state.board[i].cube === previousObj.cube){
-								prevObjIndex = i
-							}
-						}
-					}
+			// 		let prevObjIndex = null
+			// 		let chosenObjIndex = null
+			// 		for(let i = 0; i < this.state.board.length; i++){
+			// 			if(this.state.board[i].cube === eaObj.cube){
+			// 				chosenObjIndex = i
+			// 			}
+			// 			// if(previousObj){
+			// 			// 	if(this.state.board[i].cube === previousObj.cube){
+			// 			// 		prevObjIndex = i
+			// 			// 	}
+			// 			// }
+			// 		}
+			// 		eaObj.audio.play()
 
-					eaObj.audio.play()
+			// 		let updateState = this.state.board
 
-					let updateState = this.state.board
-
-					if(previousObj){
-						updateState[prevObjIndex].className = ''
-					}
-					updateState[chosenObjIndex].className = 'button-selector'
+			// 		if(previousObj){
+			// 			updateState[prevObjIndex].className = ''
+			// 		}
+			// 		updateState[chosenObjIndex].className = 'button-selector'
 					
 					
 					
 
-					if(i === this.state.randomSelection.length -1){
+			// 		if(i === this.state.randomSelection.length -1){
 
-						setTimeout(()=>{
-							updateState[chosenObjIndex].className = ''
-							this.setState({
-								isComputerTurn:false,
-								board:updateState})
-						}, delay)
-					}
-					this.setState({board:updateState})
-				}, (delay * (i + 1)))
+			// 			setTimeout(()=>{
+			// 				updateState[chosenObjIndex].className = ''
+			// 				this.setState({
+			// 					isComputerTurn:false,
+			// 					board:updateState})
+			// 			}, delay)
+			// 		}
+			// 		this.setState({board:updateState})
+			// 	}, (delay * (i + 1)))
 
 				
 				
 				
-			})
+			// })
 			// set computer turn to false
 		}
 	}
+	_playComputerSound = (array, index)=>{
+		let chosenObjIndex = null
+		for(let i = 0; i < this.state.board.length; i++){
+			if(this.state.board[i].cube === array[index].cube){
+				chosenObjIndex = i
+			}
+		}
+		let updateState = this.state.board
+		updateState[chosenObjIndex].className = 'button-selector'
+		this.setState({board:updateState})
+
+		let eaAudio = ''
+		switch(array[index].cube){
+			case "1":
+				eaAudio = new Audio('./audio/wind.mp3');
+			break;
+			case "2":
+				eaAudio = new Audio('./audio/crowd.mp3');
+			break;
+			case "3":
+				eaAudio = new Audio('./audio/sword.mp3');
+			break;
+			case "4":
+				eaAudio = new Audio('./audio/dragon.mp3');
+			break;
+			default:
+				return null
+		}
+			eaAudio.addEventListener('ended', ()=>{
+				updateState[chosenObjIndex].className = ''
+				this.setState({board:updateState})
+				if (index < array.length -1){
+					this._playComputerSound(array, (index+1))
+
+					
+				}
+				if (index === array.length -1){
+					this.setState({isComputerTurn:false})
+				}
+			})
+			eaAudio.play()
+	}
+
+
 
 	// this.setstate({}, function) = .then(function)
 
@@ -134,7 +173,6 @@ export class CerseiSays extends Component {
 			let userLength = (userInputArray.length- 1)
 			let index = this.state.randomSelection.length - 1
 	
-			console.log(userInputArray)
 			
 	
 			if (randomSelection[userInputArray.length- 1].cube === userInputArray[userInputArray.length- 1].cube){
@@ -143,7 +181,10 @@ export class CerseiSays extends Component {
 					if(userInputArray.length - 1 === 20){
 						this.setState({isWinner:true})
 					}else{
-						this.setState({isComputerTurn:true},this._newRound())
+						setTimeout(()=>{
+							this.setState({isComputerTurn:true},this._newRound)
+
+						},1500)
 						
 					}
 	
