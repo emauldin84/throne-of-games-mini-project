@@ -169,9 +169,9 @@ export class CerseiSays extends Component {
 			eaObj.audio.play()
 			let userInputArray = [...this.state.userInput, {...eaObj}]
 			
-			const {randomSelection, userInput} = this.state
-			let userLength = (userInputArray.length- 1)
-			let index = this.state.randomSelection.length - 1
+			const {randomSelection} = this.state
+
+			let index = randomSelection.length - 1
 	
 			
 	
