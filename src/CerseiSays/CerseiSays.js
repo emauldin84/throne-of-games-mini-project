@@ -6,6 +6,9 @@ import RoundCounter from "./RoundCounter";
 export class CerseiSays extends Component {
 	constructor(props) {
 		super(props);
+		this.shame =  new Audio ('./audio/shame.mp3')
+
+		
 		this.state = {
 			board: [
 					{ 
@@ -34,6 +37,8 @@ export class CerseiSays extends Component {
 				}
 			],
 
+
+			
 			userInput: [],
 			randomSelection: [],
 			isComputerTurn:true,
@@ -42,6 +47,9 @@ export class CerseiSays extends Component {
 			isLoser:false
 		};
 	}
+
+
+	
 	_newRound = ()=>{
 		const randomCube = parseInt(Math.random()*4)
 		const tempRandomArray = this.state.randomSelection
@@ -193,8 +201,11 @@ export class CerseiSays extends Component {
 				}
 	
 			}else{
-				// play shame
-				this.setState({isLoser:true})
+				
+				this.setState({isLoser:true}, () => {
+					this._playShame()
+
+				})
 			}
 			
 
@@ -202,6 +213,8 @@ export class CerseiSays extends Component {
 	}
 
 	_startNewGame = ()=>{
+		this.shame.pause()
+		this.shame.currentTime =0;
 		const randomCube = parseInt(Math.random()*4)
 		this.setState({
 			userInput:[],
@@ -219,8 +232,26 @@ export class CerseiSays extends Component {
 		
 	}
 
-	_
+	_playShame = () => {
 
+		// const shame = new Audio ('./audio/shame.mp3')
+	   
+		// shame.addEventListener('ended', ()=> {
+		// 	if (this.state.isLoser) {
+		// 		this._playShame()
+		// 	}
+		// })
+		this.shame.play()
+	}
+
+
+componentDidMount() {
+	this.shame.addEventListener('ended', ()=> {
+		if (this.state.isLoser) {
+			this._playShame()
+		}
+	})
+}
 
 	render() {
 		return (
@@ -253,5 +284,11 @@ export class CerseiSays extends Component {
 		);
 	}
 }
+
+
+
+
+
+
 
 export default CerseiSays;
