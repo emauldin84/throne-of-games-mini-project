@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Board from "./Board";
+import Result from './Result'
 
 export class CerseiSays extends Component {
 	constructor(props) {
@@ -193,7 +194,12 @@ export class CerseiSays extends Component {
 					board={this.state.board} 
 					clickHandler={this._checkState}
 				/>
-				<button onClick={this._startNewGame}>NEW GAME</button>
+				{/* <button onClick={this._startNewGame}>NEW GAME</button> */}
+				<Result
+					winner={this.state.isWinner}
+					loser={this.state.isLoser}
+					clickHandler={this._startNewGame}
+				/>
 
 
 
