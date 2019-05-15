@@ -252,6 +252,9 @@ componentDidMount() {
 		}
 	})
 }
+componentWillUnmount(){
+	this.shame.pause();
+}
 
 	render() {
 		return (
