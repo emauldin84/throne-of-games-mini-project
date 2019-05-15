@@ -1,0 +1,16 @@
+
+  
+
+  body {
+    background: none;
+    /* background-attachment: fixed;
+    background-position: center; */
+    background-color: #1b2408;
+    color: white;
+    background: url('../imgs/westeros-from-the-wall-background.png') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+  
+  }
+  
