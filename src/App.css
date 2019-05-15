@@ -333,7 +333,7 @@ button {
 	/* margin: 20px; */
 	color: white;
 	background: rgba(0, 0, 0, 0.7);
-	cursor: pointer;
+	/* cursor: pointer; */
 	font-family: GOTFFT;
 }
 .playerTurn {
@@ -467,6 +467,15 @@ h3 {
 	.App {
 		margin-top: 60px;
 	}
+
   }
+
+  @media (pointer: coarse) {
+      
+    .menu {
+        display:none;
+    } }
+
+
 
 
