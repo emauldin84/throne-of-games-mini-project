@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Dropdown() {
 	return (
 		<div className="dropdown">
-			<h2 className="menu">MENU</h2>
+			<button className="menu">MENU</button>
 			<div className="dropdown-content">
 				<Link to="/tic-tac-tyrion" className="game-links item">
 					Tic-Tac-Tyrion
