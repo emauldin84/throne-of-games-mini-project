@@ -20,6 +20,7 @@ h2 {
 }
 .App {
 	text-align: center;
+	margin-top: 80px;
 }
 .App-logo {
 	animation: App-logo-spin infinite 20s linear;
@@ -225,9 +226,6 @@ div .connect4housesSquare {
 
 /* **********************Cersei Says********************** */
 
-.cersei-says-container {
- top: 500px;
-}
 .cersei-says-board{
   display:flex;
   justify-content: center;
@@ -445,6 +443,11 @@ h3 {
 		margin-top:10px;
 	}
 
+	.cersei-says-body {
+		width:65vw;
+	  }
+
+
 }
 
 @media only screen and (max-width: 517px) {
@@ -460,6 +463,9 @@ h3 {
 	}
 	.dropdown-content {
 		top: 35px;
+	}
+	.App {
+		margin-top: 60px;
 	}
   }
 
