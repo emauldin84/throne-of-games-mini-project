@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Board from "./Board";
 import Result from './Result'
+import RoundCounter from "./RoundCounter";
 
 export class CerseiSays extends Component {
 	constructor(props) {
@@ -182,14 +183,14 @@ export class CerseiSays extends Component {
 
 	render() {
 		return (
-			<div>
-
-      
-      	<link
+			<div className='cersei-says-container'>
+				<link
 					rel="StyleSheet"
 					type="text/css"
 					href="../styles/cersei-says.css"
 				/>
+				<h1>Cersei Says</h1>
+				<RoundCounter round={this.state.randomSelection.length}/>
 				<Board 
 					board={this.state.board} 
 					clickHandler={this._checkState}
@@ -200,6 +201,7 @@ export class CerseiSays extends Component {
 					loser={this.state.isLoser}
 					clickHandler={this._startNewGame}
 				/>
+				
 
 
 

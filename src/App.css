@@ -40,15 +40,17 @@ h2 {
 .menu {
 	font-size: 16px;
 	vertical-align: middle;
-	height: 20px;
+	/* height: 20px; */
 	margin: 0;
 	position: fixed;
-	top: 20px;
+	top: 10px;
 	/* width: 100px; */
 	/* padding-top: 5%; */
 	
 	/* transform: translateY(25%); */
 	z-index: 100;
+	border: none;
+	background: none;
 	
 }
 .dropdown {
@@ -57,6 +59,7 @@ h2 {
 	vertical-align: middle;
 	/* background-color: rgba(0, 0, 0, 0.7); */
 	color: white;
+	z-index: 100;
 	
 }
 
@@ -67,7 +70,7 @@ h2 {
 	color: white;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 10;
+	z-index: 100;
 	float: left;
 	top: 38px;
 }
@@ -80,6 +83,7 @@ h2 {
 	text-align: left;
 	font-size: 14px;
 	margin: 0;
+	z-index: 100;
 }
 .dropdown:hover .dropdown-content {
 	display: block;
@@ -92,11 +96,13 @@ h2 {
 	color: #61dafb;
 }
 .nav-bar {
-	position: relative;
+	position: fixed;
 	background-color: rgba(0, 0, 0, 0.7);
-	height: 100%;
+	height: auto;
+	width: 100%;
 	margin-top: 0;
 	padding: 15px;
+	top: 0;
 }
 
 .title7 {
@@ -126,7 +132,6 @@ h2 {
 	background-color: rgba(0, 0, 0, 0.7);
 	vertical-align: middle;
 }
-/**************CERSEI SAYS CSS *************************************************************/
 
 /**************CONNECT 4 HOUSES CSS***********************************************************/
 .connect4Flex {
@@ -220,6 +225,9 @@ div .connect4housesSquare {
 
 /* **********************Cersei Says********************** */
 
+.cersei-says-container {
+ top: 500px;
+}
 .cersei-says-board{
   display:flex;
   justify-content: center;
@@ -261,6 +269,12 @@ div .connect4housesSquare {
   border-radius: 30% 0 100% 0;
   }
 
+  .roundCounter {
+	background: rgba(0, 0, 0, 0.7);
+	width: 120px;
+	margin: auto;
+	padding: 10px;
+  }
 
 
 
@@ -442,10 +456,10 @@ h3 {
 		font-size:20px;
 	}
 	.menu {
-		top: 15px;
+		top: 5px;
 	}
 	.dropdown-content {
-		top: 30px;
+		top: 35px;
 	}
   }
 
