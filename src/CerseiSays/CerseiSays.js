@@ -4,6 +4,8 @@ import Board from "./Board";
 export class CerseiSays extends Component {
 	constructor(props) {
 		super(props);
+	
+
 		this.state = {
 			board: [
 					{ 
@@ -57,6 +59,15 @@ export class CerseiSays extends Component {
 	componentDidUpdate(){
 		console.log("component did update")
 	}
+	componentDidMount() {
+		let dummy = [1,2,2,3,1,3]
+		playSound(dummy,0)
+	
+	}
+
+		
+
+
 
 	_checkComputerTurn = ()=>{
 
@@ -95,9 +106,6 @@ export class CerseiSays extends Component {
 					}
 					updateState[chosenObjIndex].className = 'button-selector'
 					
-					
-					
-
 					if(i === this.state.randomSelection.length -1){
 
 						setTimeout(()=>{
@@ -176,7 +184,7 @@ export class CerseiSays extends Component {
 		
 	}
 
-	_
+	
 
 
 	render() {
@@ -204,5 +212,35 @@ export class CerseiSays extends Component {
 		);
 	}
 }
+
+
+function playSound(array,index){
+
+	console.log("value is ", index);
+	let mysound = "";
+	if (array[index] === 1) {
+		 mysound = new Audio ('./audio/wind.mp3')
+	}
+	else if (array[index] === 2) {
+		 mysound = new Audio ('./audio/crowd.mp3')
+	}
+	else if (array[index] === 3) {
+		 mysound = new Audio ('./audio/sword.mp3')
+	}
+	else {
+		 mysound = new Audio ('./audio/fire.mp3')
+	}
+	mysound.addEventListener('ended', ()=> {
+		console.log(index, "posisiton in dummy array")
+		if (index < array.length-1) {
+
+			playSound(array,index+1)
+		}
+	})
+	console.log("playing song")
+	mysound.play()
+}
+
+
 
 export default CerseiSays;
