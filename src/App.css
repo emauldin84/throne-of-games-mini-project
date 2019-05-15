@@ -317,11 +317,12 @@ forced to a square size.... */
 }
 button {
 	padding: 10px;
-	font-size: 20px;
+	font-size: 16px;
 	/* margin: 20px; */
 	color: white;
 	background: rgba(0, 0, 0, 0.7);
 	cursor: pointer;
+	font-family: GOTFFT;
 }
 .playerTurn {
 	color: white;
