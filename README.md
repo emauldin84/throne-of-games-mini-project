@@ -1,68 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Throne of Games
+https://throneofgames.app/
 
-## Available Scripts
+## Authors
+As students in the Spring 2019 Digital Crafts coding bootcamp, Ben Hallquist, Eric Mauldin, and Margaret O’Neill created this React.js based game website.  As season 8 of the popular TV shows, Game of Thrones, was coming to end, we chose to create a series of games in homage to some of the show’s characters.
 
-In the project directory, you can run:
+<img src="https://github.com/emauldin84/throne-of-games-mini-project/blob/master/readmeimg/splash.png" width"500">
 
-### `npm start`
+## Description 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Tic-Tac-Tyiron was a two-person game using the standard rules.  We allow the users to select a character image that would mark their spot on the board.  Images also flipped directions based one first or second player.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Connect-4-Houses pits Fire and Ice against each other to see who can get 4 spaces in a row first.  Fun gif images were used to make this game engaging.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Cersei-Says utilizes sound bytes from the show such as dragon’s breath and the ‘shame’ sequence.  The user has to match the computers’ random array of sounds that increase in complexity with each round.
