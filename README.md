@@ -18,5 +18,5 @@ Connect-4-Houses pits Fire and Ice against each other to see who can get 4 space
 
 Cersei-Says utilizes sound bytes from the show such as dragon’s breath and the ‘shame’ sequence.  The user has to match the computers’ random array of sounds that increase in complexity with each round.
 
-<img src="https://github.com/emauldin84/throne-of-games-mini-project/blob/master/readmeimg/cerseisays.png?raw=true" widith="400" />
+<img src="https://github.com/emauldin84/throne-of-games-mini-project/blob/master/readmeimg/cerseisays.png?raw=true" width="400" />
 
