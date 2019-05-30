@@ -4,6 +4,9 @@ https://throneofgames.app/
 ## Authors
 As students in the Spring 2019 Digital Crafts coding bootcamp, Ben Hallquist, Eric Mauldin, and Margaret O’Neill created this React.js based game website.  As season 8 of the popular TV shows, Game of Thrones, was coming to end, we chose to create a series of games in homage to some of the show’s characters.
 
+
+<img src="https://github.com/MAOneill/img-to-canvas-to-svg-pattern/blob/master/img/examplesvgpatterns.png" width="300">
+
 <img src="https://github.com/emauldin84/throne-of-games-mini-project/blob/master/readmeimg/splash.png" width"500">
 
 ## Description 
